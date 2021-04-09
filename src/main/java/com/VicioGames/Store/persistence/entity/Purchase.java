@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 @Entity
 public class Purchase {
 
+    //----------------TABLE COLUMNS-------------------------
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "purchase_id")
@@ -25,6 +27,14 @@ public class Purchase {
 
     @Column(name = "p_comment")
     private String pComment;
+
+    //----------------RELATIONSHIPS--------------------------
+
+    @ManyToOne
+    @JoinColumn(name = "status_id", insertable = false, updatable = false)
+    private Status status;
+
+    //----------------SETTERS AND GETTERS---------------------
 
     public Integer getPurchaseId() {
         return purchaseId;
@@ -73,4 +83,13 @@ public class Purchase {
     public void setpComment(String pComment) {
         this.pComment = pComment;
     }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
 }
