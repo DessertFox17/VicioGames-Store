@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 @Entity
 public class User {
 
+    //----------------TABLE COLUMNS-------------------------
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -46,6 +48,15 @@ public class User {
 
     @Column(name = "u_status")
     private Boolean uStatus;
+
+    //----------------RELATIONSHIPS--------------------------
+
+    @ManyToOne
+    @JoinColumn(name = "role_id",insertable = false,updatable = false)
+    private Role role;
+
+    //----------------SETTERS AND GETTERS---------------------
+
 
     public Integer getUserId() {
         return userId;
@@ -149,5 +160,13 @@ public class User {
 
     public void setuStatus(Boolean uStatus) {
         this.uStatus = uStatus;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

@@ -29,7 +29,6 @@ public class Category {
 
     //----------------SETTERS AND GETTERS---------------------
 
-
     public Integer getCategoryId() {
         return categoryId;
     }
@@ -69,4 +68,5 @@ public class Category {
     public void setSubcategories(List<Subcategory> subcategories) {
         this.subcategories = subcategories;
     }
+
 }

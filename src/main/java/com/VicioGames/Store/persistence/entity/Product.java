@@ -2,6 +2,7 @@ package com.VicioGames.Store.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -51,6 +52,9 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "subcategory_id", insertable = false, updatable = false)
     private Subcategory subcategory;
+
+    @OneToMany(mappedBy = "product" )
+    private List<Image> images;
 
     //----------------SETTERS AND GETTERS---------------------
 
@@ -149,4 +153,21 @@ public class Product {
     public void setPrStatus(Boolean prStatus) {
         this.prStatus = prStatus;
     }
+
+    public Subcategory getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(Subcategory subcategory) {
+        this.subcategory = subcategory;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
+    
 }
