@@ -1,13 +1,12 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Product_Purchase")
 public class ProductPurchase {
+
+    //----------------TABLE COLUMNS---------------------------
 
     @EmbeddedId
     private ProductPurchasePK id;
@@ -23,6 +22,19 @@ public class ProductPurchase {
 
     @Column(name = "pp_purchasecost")
     private Double ppPurchaseCost;
+
+    //----------------RELATIONSHIPS---------------------------
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", insertable = false, updatable = false)
+    private Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "purchase_id", insertable = false, updatable = false)
+    private Purchase purchase;
+
+    //----------------SETTERS AND GETTERS---------------------
+
 
     public ProductPurchasePK getId() {
         return id;
@@ -62,5 +74,21 @@ public class ProductPurchase {
 
     public void setPpPurchaseCost(Double ppPurchaseCost) {
         this.ppPurchaseCost = ppPurchaseCost;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Purchase getPurchase() {
+        return purchase;
+    }
+
+    public void setPurchase(Purchase purchase) {
+        this.purchase = purchase;
     }
 }

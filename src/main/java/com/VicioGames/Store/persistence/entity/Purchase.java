@@ -2,6 +2,7 @@ package com.VicioGames.Store.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Purchase {
@@ -38,7 +39,11 @@ public class Purchase {
     @JoinColumn(name = "user_id",insertable = false, updatable = false)
     private User user;
 
+    @OneToMany(mappedBy = "purchase")
+    private List<ProductPurchase> products;
+
     //----------------SETTERS AND GETTERS---------------------
+
 
     public Integer getPurchaseId() {
         return purchaseId;
@@ -102,5 +107,13 @@ public class Purchase {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<ProductPurchase> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<ProductPurchase> products) {
+        this.products = products;
     }
 }

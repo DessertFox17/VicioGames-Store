@@ -30,6 +30,10 @@ public class Comment {
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "product_id", insertable = false, updatable = false)
+    private Product product;
+
     //----------------SETTERS AND GETTERS---------------------
 
 
@@ -79,5 +83,13 @@ public class Comment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

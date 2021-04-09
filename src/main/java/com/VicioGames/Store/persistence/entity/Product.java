@@ -56,7 +56,14 @@ public class Product {
     @OneToMany(mappedBy = "product" )
     private List<Image> images;
 
+    @OneToMany(mappedBy = "product" )
+    private List<Comment> comments;
+
+    @OneToMany(mappedBy = "product")
+    private List<ProductPurchase> purchases;
+
     //----------------SETTERS AND GETTERS---------------------
+
 
     public Integer getProductId() {
         return productId;
@@ -169,5 +176,20 @@ public class Product {
     public void setImages(List<Image> images) {
         this.images = images;
     }
-    
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public List<ProductPurchase> getPurchases() {
+        return purchases;
+    }
+
+    public void setPurchases(List<ProductPurchase> purchases) {
+        this.purchases = purchases;
+    }
 }
