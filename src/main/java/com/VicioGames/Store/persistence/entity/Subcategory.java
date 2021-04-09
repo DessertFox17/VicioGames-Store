@@ -1,6 +1,7 @@
 package com.VicioGames.Store.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Subcategory {
@@ -29,6 +30,9 @@ public class Subcategory {
     @ManyToOne
     @JoinColumn(name = "category_id", insertable = false, updatable = false)
     private Category category;
+
+    @OneToMany(mappedBy = "subcategory")
+    private List<Product> products;
 
     //----------------SETTERS AND GETTERS---------------------
 

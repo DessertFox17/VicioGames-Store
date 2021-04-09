@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 @Entity
 public class Product {
 
+    //----------------TABLE COLUMNS-------------------------
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
@@ -44,9 +46,13 @@ public class Product {
     @Column(name = "pr_status")
     private Boolean prStatus;
 
+    //----------------RELATIONSHIPS--------------------------
 
+    @ManyToOne
+    @JoinColumn(name = "subcategory_id", insertable = false, updatable = false)
+    private Subcategory subcategory;
 
-
+    //----------------SETTERS AND GETTERS---------------------
 
     public Integer getProductId() {
         return productId;
