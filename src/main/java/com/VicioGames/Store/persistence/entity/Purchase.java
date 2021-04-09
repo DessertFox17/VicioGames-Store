@@ -34,6 +34,10 @@ public class Purchase {
     @JoinColumn(name = "status_id", insertable = false, updatable = false)
     private Status status;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id",insertable = false, updatable = false)
+    private User user;
+
     //----------------SETTERS AND GETTERS---------------------
 
     public Integer getPurchaseId() {
@@ -92,4 +96,11 @@ public class Purchase {
         this.status = status;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
