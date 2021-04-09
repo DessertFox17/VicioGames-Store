@@ -5,6 +5,8 @@ import javax.persistence.*;
 @Entity
 public class Subcategory {
 
+    //----------------TABLE COLUMNS-------------------------
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subcategory_id")
@@ -21,6 +23,15 @@ public class Subcategory {
 
     @Column(name = "s_Status")
     private Boolean sStatus;
+
+    //----------------RELATIONSHIPS--------------------------
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", insertable = false, updatable = false)
+    private Category category;
+
+    //----------------SETTERS AND GETTERS---------------------
+
 
     public Integer getSubcategoryId() {
         return subcategoryId;
@@ -60,5 +71,13 @@ public class Subcategory {
 
     public void setsStatus(Boolean sStatus) {
         this.sStatus = sStatus;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

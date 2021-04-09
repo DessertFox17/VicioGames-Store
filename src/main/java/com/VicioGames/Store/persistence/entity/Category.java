@@ -1,9 +1,12 @@
 package com.VicioGames.Store.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Category {
+
+    //----------------TABLE COLUMNS-------------------------
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +21,14 @@ public class Category {
 
     @Column(name = "cat_status")
     private Boolean catStatus;
+
+    //----------------RELATIONSHIPS--------------------------
+
+    @OneToMany(mappedBy = "category")
+    private List<Subcategory> subcategories;
+
+    //----------------SETTERS AND GETTERS---------------------
+
 
     public Integer getCategoryId() {
         return categoryId;
@@ -49,5 +60,13 @@ public class Category {
 
     public void setCatStatus(Boolean catStatus) {
         this.catStatus = catStatus;
+    }
+
+    public List<Subcategory> getSubcategories() {
+        return subcategories;
+    }
+
+    public void setSubcategories(List<Subcategory> subcategories) {
+        this.subcategories = subcategories;
     }
 }
