@@ -5,6 +5,8 @@ import javax.persistence.*;
 @Entity
 public class Comment {
 
+    //----------------TABLE COLUMNS-------------------------
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_id")
@@ -21,6 +23,15 @@ public class Comment {
 
     @Column(name = "c_qualification")
     private Float cQualification;
+
+    //----------------RELATIONSHIPS--------------------------
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    private User user;
+
+    //----------------SETTERS AND GETTERS---------------------
+
 
     public Integer getCommentId() {
         return commentId;
@@ -60,5 +71,13 @@ public class Comment {
 
     public void setcQualification(Float cQualification) {
         this.cQualification = cQualification;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

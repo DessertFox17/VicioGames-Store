@@ -59,6 +59,9 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Purchase> purchases;
 
+    @OneToMany(mappedBy = "user")
+    private List<Comment> comment;
+
     //----------------SETTERS AND GETTERS---------------------
 
     public Integer getUserId() {
@@ -179,5 +182,13 @@ public class User {
 
     public void setPurchases(List<Purchase> purchases) {
         this.purchases = purchases;
+    }
+
+    public List<Comment> getComment() {
+        return comment;
+    }
+
+    public void setComment(List<Comment> comment) {
+        this.comment = comment;
     }
 }
