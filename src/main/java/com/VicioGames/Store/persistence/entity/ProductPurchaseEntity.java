@@ -1,7 +1,14 @@
 package com.VicioGames.Store.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Data;
 import javax.persistence.*;
 
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
+@Data
 @Entity
 @Table(name = "product_purchase")
 public class ProductPurchaseEntity {
@@ -27,67 +34,10 @@ public class ProductPurchaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
-    private ProductEntity productEntity;
+    private ProductEntity product;
 
     @ManyToOne
     @JoinColumn(name = "purchase_id", insertable = false, updatable = false)
-    private PurchaseEntity purchaseEntity;
+    private PurchaseEntity purchase;
 
-    //----------------SETTERS AND GETTERS---------------------
-
-    public ProductPurchasePKEntity getId() {
-        return id;
-    }
-
-    public void setId(ProductPurchasePKEntity id) {
-        this.id = id;
-    }
-
-    public Integer getPpQuantity() {
-        return ppQuantity;
-    }
-
-    public void setPpQuantity(Integer ppQuantity) {
-        this.ppQuantity = ppQuantity;
-    }
-
-    public Double getPpTotSendCost() {
-        return ppTotSendCost;
-    }
-
-    public void setPpTotSendCost(Double ppTotSendCost) {
-        this.ppTotSendCost = ppTotSendCost;
-    }
-
-    public Double getPpTotProdsCost() {
-        return ppTotProdsCost;
-    }
-
-    public void setPpTotProdsCost(Double ppTotProdsCost) {
-        this.ppTotProdsCost = ppTotProdsCost;
-    }
-
-    public Double getPpPurchaseCost() {
-        return ppPurchaseCost;
-    }
-
-    public void setPpPurchaseCost(Double ppPurchaseCost) {
-        this.ppPurchaseCost = ppPurchaseCost;
-    }
-
-    public ProductEntity getProductEntity() {
-        return productEntity;
-    }
-
-    public void setProductEntity(ProductEntity productEntity) {
-        this.productEntity = productEntity;
-    }
-
-    public PurchaseEntity getPurchaseEntity() {
-        return purchaseEntity;
-    }
-
-    public void setPurchaseEntity(PurchaseEntity purchaseEntity) {
-        this.purchaseEntity = purchaseEntity;
-    }
 }

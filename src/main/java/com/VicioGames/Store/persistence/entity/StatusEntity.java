@@ -1,8 +1,15 @@
 package com.VicioGames.Store.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "statusId")
+@Data
 @Entity
 @Table(name = "status")
 public class StatusEntity {
@@ -19,32 +26,7 @@ public class StatusEntity {
 
     //----------------RELATIONSHIPS---------------------------
 
-    @OneToMany(mappedBy = "statusEntity")
-    private List<PurchaseEntity> purchaseEntities;
+    @OneToMany(mappedBy = "status")
+    private List<PurchaseEntity> purchases;
 
-    //----------------SETTERS AND GETTERS---------------------
-
-    public Integer getStatusId() {
-        return statusId;
-    }
-
-    public void setStatusId(Integer statusId) {
-        this.statusId = statusId;
-    }
-
-    public String getStName() {
-        return stName;
-    }
-
-    public void setStName(String stName) {
-        this.stName = stName;
-    }
-
-    public List<PurchaseEntity> getPurchaseEntities() {
-        return purchaseEntities;
-    }
-
-    public void setPurchaseEntities(List<PurchaseEntity> purchaseEntities) {
-        this.purchaseEntities = purchaseEntities;
-    }
 }

@@ -1,10 +1,15 @@
 package com.VicioGames.Store.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "roleId")
+@Datag
 @Entity
 @Table(name = "role")
 public class RoleEntity {
@@ -21,33 +26,7 @@ public class RoleEntity {
 
     //----------------RELATIONSHIPS--------------------------
 
-    @OneToMany(mappedBy = "role" )
+    @OneToMany(mappedBy = "role")
     private List<UserEntity> users;
 
-    //----------------SETTERS AND GETTERS---------------------
-
-
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    public String getrName() {
-        return rName;
-    }
-
-    public void setrName(String rName) {
-        this.rName = rName;
-    }
-
-    public List<UserEntity> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<UserEntity> users) {
-        this.users = users;
-    }
 }

@@ -1,8 +1,15 @@
 package com.VicioGames.Store.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "subcategoryId")
+@Data
 @Entity
 @Table(name = "subcategory")
 public class SubcategoryEntity {
@@ -30,66 +37,9 @@ public class SubcategoryEntity {
 
     @ManyToOne
     @JoinColumn(name = "category_id", insertable = false, updatable = false)
-    private CategoryEntity categoryEntity;
+    private CategoryEntity category;
 
-    @OneToMany(mappedBy = "subcategoryEntity")
-    private List<ProductEntity> productEntities;
+    @OneToMany(mappedBy = "subcategories")
+    private List<ProductEntity> products;
 
-    //----------------SETTERS AND GETTERS---------------------
-
-    public Integer getSubcategoryId() {
-        return subcategoryId;
-    }
-
-    public void setSubcategoryId(Integer subcategoryId) {
-        this.subcategoryId = subcategoryId;
-    }
-
-    public Integer getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getsName() {
-        return sName;
-    }
-
-    public void setsName(String sName) {
-        this.sName = sName;
-    }
-
-    public String getsDescript() {
-        return sDescript;
-    }
-
-    public void setsDescript(String sDescript) {
-        this.sDescript = sDescript;
-    }
-
-    public Boolean getsStatus() {
-        return sStatus;
-    }
-
-    public void setsStatus(Boolean sStatus) {
-        this.sStatus = sStatus;
-    }
-
-    public CategoryEntity getCategoryEntity() {
-        return categoryEntity;
-    }
-
-    public void setCategoryEntity(CategoryEntity categoryEntity) {
-        this.categoryEntity = categoryEntity;
-    }
-
-    public List<ProductEntity> getProductEntities() {
-        return productEntities;
-    }
-
-    public void setProductEntities(List<ProductEntity> productEntities) {
-        this.productEntities = productEntities;
-    }
 }

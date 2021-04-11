@@ -1,9 +1,16 @@
 package com.VicioGames.Store.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "productId")
+@Data
 @Entity
 @Table(name = "product")
 public class ProductEntity {
@@ -52,144 +59,16 @@ public class ProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "subcategory_id", insertable = false, updatable = false)
-    private SubcategoryEntity subcategoryEntity;
+    private SubcategoryEntity subcategories;
 
-    @OneToMany(mappedBy = "productEntity" )
-    private List<ImageEntity> imageEntities;
+    @OneToMany(mappedBy = "product" )
+    private List<ImageEntity> images;
 
-    @OneToMany(mappedBy = "productEntity" )
-    private List<CommentEntity> commentEntities;
+    @OneToMany(mappedBy = "product" )
+    private List<CommentEntity> comments;
 
-    @OneToMany(mappedBy = "productEntity")
-    private List<ProductPurchaseEntity> purchaseEntities;
+    @OneToMany(mappedBy = "product")
+    private List<ProductPurchaseEntity> purchases;
 
-    //----------------SETTERS AND GETTERS---------------------
 
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
-    }
-
-    public Integer getSubcategoryId() {
-        return subcategoryId;
-    }
-
-    public void setSubcategoryId(Integer subcategoryId) {
-        this.subcategoryId = subcategoryId;
-    }
-
-    public String getPrName() {
-        return prName;
-    }
-
-    public void setPrName(String prName) {
-        this.prName = prName;
-    }
-
-    public Double getPrPrice() {
-        return prPrice;
-    }
-
-    public void setPrPrice(Double prPrice) {
-        this.prPrice = prPrice;
-    }
-
-    public Integer getPrStock() {
-        return prStock;
-    }
-
-    public void setPrStock(Integer prStock) {
-        this.prStock = prStock;
-    }
-
-    public Double getPrSendcost() {
-        return prSendcost;
-    }
-
-    public void setPrSendcost(Double prSendcost) {
-        this.prSendcost = prSendcost;
-    }
-
-    public String getPrTumbnail() {
-        return prTumbnail;
-    }
-
-    public void setPrTumbnail(String prTumbnail) {
-        this.prTumbnail = prTumbnail;
-    }
-
-    public LocalDateTime getPrPublicdate() {
-        return prPublicdate;
-    }
-
-    public void setPrPublicdate(LocalDateTime prPublicdate) {
-        this.prPublicdate = prPublicdate;
-    }
-
-    public String getPrDescript() {
-        return prDescript;
-    }
-
-    public void setPrDescript(String prDescript) {
-        this.prDescript = prDescript;
-    }
-
-    public String getPrDetails() {
-        return prDetails;
-    }
-
-    public void setPrDetails(String prDetails) {
-        this.prDetails = prDetails;
-    }
-
-    public Integer getPrSearchCount() {
-        return prSearchCount;
-    }
-
-    public void setPrSearchCount(Integer prSearchCount) {
-        this.prSearchCount = prSearchCount;
-    }
-
-    public Boolean getPrStatus() {
-        return prStatus;
-    }
-
-    public void setPrStatus(Boolean prStatus) {
-        this.prStatus = prStatus;
-    }
-
-    public SubcategoryEntity getSubcategoryEntity() {
-        return subcategoryEntity;
-    }
-
-    public void setSubcategoryEntity(SubcategoryEntity subcategoryEntity) {
-        this.subcategoryEntity = subcategoryEntity;
-    }
-
-    public List<ImageEntity> getImageEntities() {
-        return imageEntities;
-    }
-
-    public void setImageEntities(List<ImageEntity> imageEntities) {
-        this.imageEntities = imageEntities;
-    }
-
-    public List<CommentEntity> getCommentEntities() {
-        return commentEntities;
-    }
-
-    public void setCommentEntities(List<CommentEntity> commentEntities) {
-        this.commentEntities = commentEntities;
-    }
-
-    public List<ProductPurchaseEntity> getPurchaseEntities() {
-        return purchaseEntities;
-    }
-
-    public void setPurchaseEntities(List<ProductPurchaseEntity> purchaseEntities) {
-        this.purchaseEntities = purchaseEntities;
-    }
 }

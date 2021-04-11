@@ -1,9 +1,11 @@
 package com.VicioGames.Store.persistence.entity;
 
+import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
+@Data
 @Embeddable
 public class ProductPurchasePKEntity implements Serializable {
 
@@ -15,22 +17,4 @@ public class ProductPurchasePKEntity implements Serializable {
     @Column(name = "purchase_id")
     private Integer purchaseId;
 
-    //----------------SETTER y GETTER ---------------------------
-
-
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
-    }
-
-    public Integer getPurchaseId() {
-        return purchaseId;
-    }
-
-    public void setPurchaseId(Integer purchaseId) {
-        this.purchaseId = purchaseId;
-    }
 }
