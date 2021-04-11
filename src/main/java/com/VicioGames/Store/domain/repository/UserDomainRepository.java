@@ -1,13 +1,13 @@
 package com.VicioGames.Store.domain.repository;
 
-import com.VicioGames.Store.persistence.entity.UserEntity;
+import com.VicioGames.Store.domain.endpointdto.UserDto;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface UserDomainRepository {
 
-    List<UserEntity> getAll();
-    Optional<UserEntity> getByUserId(int userId);
-    UserEntity save(UserEntity userEntity);
+    List<UserDto> getAll();
+    Optional<UserDto> getByUserId(int userId);
+    UserDto save(UserDto userDto);
 }

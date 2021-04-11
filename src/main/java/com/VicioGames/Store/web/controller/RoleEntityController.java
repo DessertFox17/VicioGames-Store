@@ -1,7 +1,7 @@
 package com.VicioGames.Store.web.controller;
 
+import com.VicioGames.Store.domain.endpointdto.RoleDto;
 import com.VicioGames.Store.domain.service.RoleEntityService;
-import com.VicioGames.Store.persistence.entity.RoleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +18,7 @@ public class RoleEntityController {
     private RoleEntityService roleEntityService;
 
     @GetMapping("/{roleId}")
-    public Optional<RoleEntity> getByRoleId(@PathVariable("roleId") int roleId){
+    public Optional<RoleDto> getByRoleId(@PathVariable("roleId") int roleId){
         return roleEntityService.getByRoleId(roleId);
     }
 }

@@ -10,10 +10,11 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@JsonIdentityInfo(
+/*@JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "userId")
-@Data
+        property = "userId")*/
+@Getter
+@Setter
 @Entity
 @Table(name = "users")
 public class UserEntity implements Serializable {
