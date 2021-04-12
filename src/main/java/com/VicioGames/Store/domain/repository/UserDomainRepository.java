@@ -9,5 +9,6 @@ public interface UserDomainRepository {
 
     List<UserDto> getAll();
     Optional<UserDto> getByUserId(int userId);
-    UserDto save(UserDto userDto);
+    UserDto createUser(UserDto userDto);
+    UserDto updateUser(UserDto userDto);
 }

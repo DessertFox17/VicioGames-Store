@@ -35,10 +35,14 @@ public class UserPersistenceRepository implements UserDomainRepository {
     }
 
     @Override
-    public UserDto save(UserDto userDto) {
-
+    public UserDto createUser(UserDto userDto) {
         UserEntity userEntity = mapper.toUserEntity(userDto);
         return mapper.toUserDto(userEntityCrudRepository.save(userEntity));
+    }
 
+    @Override
+    public UserDto updateUser(UserDto userDto) {
+        UserEntity userEntity = mapper.toUserEntity(userDto);
+        return mapper.toUserDto(userEntityCrudRepository.save(userEntity));
     }
 }

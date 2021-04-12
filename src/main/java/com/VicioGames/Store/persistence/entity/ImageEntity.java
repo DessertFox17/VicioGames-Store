@@ -1,14 +1,7 @@
 package com.VicioGames.Store.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
 import javax.persistence.*;
 
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "imageId")
-@Data
 @Entity
 @Table(name = "image")
 public class ImageEntity {
@@ -29,5 +22,30 @@ public class ImageEntity {
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
     private ProductEntity product;
 
+    //----------------GETTER AND SETTER--------------------------
 
+
+    public Integer getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(Integer imageId) {
+        this.imageId = imageId;
+    }
+
+    public String getiURL() {
+        return iURL;
+    }
+
+    public void setiURL(String iURL) {
+        this.iURL = iURL;
+    }
+
+    public ProductEntity getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductEntity product) {
+        this.product = product;
+    }
 }

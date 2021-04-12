@@ -1,14 +1,12 @@
 package com.VicioGames.Store.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.EmbeddedId;
+import javax.persistence.ManyToOne;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
 
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
-@Data
 @Entity
 @Table(name = "product_purchase")
 public class ProductPurchaseEntity {

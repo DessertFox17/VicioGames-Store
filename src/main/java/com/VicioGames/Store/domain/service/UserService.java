@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserEntityService {
+public class UserService {
 
     @Autowired
     private UserDomainRepository userDomainRepository;
@@ -25,8 +25,8 @@ public class UserEntityService {
     }
 
 
-    public UserDto save(UserDto userDto) {
-        return userDomainRepository.save(userDto);
+    public UserDto createUser(UserDto userDto) {
+        return userDomainRepository.createUser(userDto);
     }
 
 }

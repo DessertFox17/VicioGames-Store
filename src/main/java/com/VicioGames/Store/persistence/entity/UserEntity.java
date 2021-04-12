@@ -1,23 +1,12 @@
 package com.VicioGames.Store.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.*;
-
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/*@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "userId")*/
-@Getter
-@Setter
 @Entity
 @Table(name = "users")
-public class UserEntity implements Serializable {
+public class UserEntity {
 
     //----------------TABLE COLUMNS-------------------------
 
@@ -65,13 +54,144 @@ public class UserEntity implements Serializable {
     //----------------RELATIONSHIPS--------------------------
 
     @ManyToOne
+    @MapsId("roleId")
     @JoinColumn(name = "role_id", updatable = false, insertable = false)
-    private RoleEntity role;
+    private RoleEntity roleEntity;
 
     @OneToMany(mappedBy = "user")
-    private List<PurchaseEntity> purchases;
+    private List<PurchaseEntity> purchaseEntities;
 
     @OneToMany(mappedBy = "user")
-    private List<CommentEntity> comments;
+    private List<CommentEntity> commentEntities;
 
+    //----------------GETTERS Y SETTERS ----------------------
+
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getuFName() {
+        return uFName;
+    }
+
+    public void setuFName(String uFName) {
+        this.uFName = uFName;
+    }
+
+    public String getuLName() {
+        return uLName;
+    }
+
+    public void setuLName(String uLName) {
+        this.uLName = uLName;
+    }
+
+    public Integer getuDNINumbr() {
+        return uDNINumbr;
+    }
+
+    public void setuDNINumbr(Integer uDNINumbr) {
+        this.uDNINumbr = uDNINumbr;
+    }
+
+    public String getuDNIType() {
+        return uDNIType;
+    }
+
+    public void setuDNIType(String uDNIType) {
+        this.uDNIType = uDNIType;
+    }
+
+    public LocalDateTime getuBitrhDate() {
+        return uBitrhDate;
+    }
+
+    public void setuBitrhDate(LocalDateTime uBitrhDate) {
+        this.uBitrhDate = uBitrhDate;
+    }
+
+    public LocalDateTime getuRegDate() {
+        return uRegDate;
+    }
+
+    public void setuRegDate(LocalDateTime uRegDate) {
+        this.uRegDate = uRegDate;
+    }
+
+    public String getuAddress() {
+        return uAddress;
+    }
+
+    public void setuAddress(String uAddress) {
+        this.uAddress = uAddress;
+    }
+
+    public Long getuPhoneNumbr() {
+        return uPhoneNumbr;
+    }
+
+    public void setuPhoneNumbr(Long uPhoneNumbr) {
+        this.uPhoneNumbr = uPhoneNumbr;
+    }
+
+    public String getuEmail() {
+        return uEmail;
+    }
+
+    public void setuEmail(String uEmail) {
+        this.uEmail = uEmail;
+    }
+
+    public String getuPassword() {
+        return uPassword;
+    }
+
+    public void setuPassword(String uPassword) {
+        this.uPassword = uPassword;
+    }
+
+    public Boolean getuStatus() {
+        return uStatus;
+    }
+
+    public void setuStatus(Boolean uStatus) {
+        this.uStatus = uStatus;
+    }
+
+    public RoleEntity getRoleEntity() {
+        return roleEntity;
+    }
+
+    public void setRoleEntity(RoleEntity roleEntity) {
+        this.roleEntity = roleEntity;
+    }
+
+    public List<PurchaseEntity> getPurchaseEntities() {
+        return purchaseEntities;
+    }
+
+    public void setPurchaseEntities(List<PurchaseEntity> purchaseEntities) {
+        this.purchaseEntities = purchaseEntities;
+    }
+
+    public List<CommentEntity> getCommentEntities() {
+        return commentEntities;
+    }
+
+    public void setCommentEntities(List<CommentEntity> commentEntities) {
+        this.commentEntities = commentEntities;
+    }
 }

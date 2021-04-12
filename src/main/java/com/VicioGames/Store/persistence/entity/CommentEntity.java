@@ -42,4 +42,62 @@ public class CommentEntity {
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private UserEntity user;
 
+    //----------------GETTER AND SETTER--------------------------
+
+
+    public Integer getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(Integer commentId) {
+        this.commentId = commentId;
+    }
+
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getcComment() {
+        return cComment;
+    }
+
+    public void setcComment(String cComment) {
+        this.cComment = cComment;
+    }
+
+    public Float getcQualification() {
+        return cQualification;
+    }
+
+    public void setcQualification(Float cQualification) {
+        this.cQualification = cQualification;
+    }
+
+    public ProductEntity getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductEntity product) {
+        this.product = product;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
 }

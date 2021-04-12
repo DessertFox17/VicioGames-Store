@@ -1,16 +1,8 @@
 package com.VicioGames.Store.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "categoryId")
-@Data
 @Entity
 @Table(name = "category")
 public class CategoryEntity {
@@ -32,8 +24,49 @@ public class CategoryEntity {
     private Boolean catStatus;
 
     //----------------RELATIONSHIPS--------------------------
-    @JsonBackReference
+
     @OneToMany(mappedBy = "category")
     private List<SubcategoryEntity> subcategories;
 
+    //----------------GETTER AND SETTER--------------------------
+
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getCatName() {
+        return catName;
+    }
+
+    public void setCatName(String catName) {
+        this.catName = catName;
+    }
+
+    public String getCatDescript() {
+        return catDescript;
+    }
+
+    public void setCatDescript(String catDescript) {
+        this.catDescript = catDescript;
+    }
+
+    public Boolean getCatStatus() {
+        return catStatus;
+    }
+
+    public void setCatStatus(Boolean catStatus) {
+        this.catStatus = catStatus;
+    }
+
+    public List<SubcategoryEntity> getSubcategories() {
+        return subcategories;
+    }
+
+    public void setSubcategories(List<SubcategoryEntity> subcategories) {
+        this.subcategories = subcategories;
+    }
 }

@@ -1,8 +1,7 @@
 package com.VicioGames.Store.web.controller;
 
 import com.VicioGames.Store.domain.endpointdto.UserDto;
-import com.VicioGames.Store.domain.service.UserEntityService;
-import com.VicioGames.Store.persistence.entity.UserEntity;
+import com.VicioGames.Store.domain.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,25 +10,24 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
-public class UserEntityController {
+public class UserController {
 
     @Autowired
-    private UserEntityService userEntityService;
+    private UserService userService;
 
     @GetMapping("/all")
     public List<UserDto> getAll(){
-        return userEntityService.getAll();
+        return userService.getAll();
     }
 
     @GetMapping("/{userId}")
     public Optional<UserDto> getByUserId(@PathVariable("userId")int userId){
-        return userEntityService.getByUserId(userId);
+        return userService.getByUserId(userId);
     }
 
     @PostMapping("/save")
-    public UserDto save(@RequestBody UserDto userDto){
-        return userEntityService.save(userDto);
+    public UserDto createUser(@RequestBody UserDto userDto){
+        return userService.createUser(userDto);
     }
-
 
 }
