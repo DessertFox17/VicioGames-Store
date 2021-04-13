@@ -1,6 +1,13 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 import java.util.List;
 
 @Entity
@@ -12,25 +19,24 @@ public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
-    private Integer roleId;
+    private Integer pRoleId;
 
     @Column(name = "r_name")
     private String rName;
 
     //----------------RELATIONSHIPS--------------------------
 
-    @OneToMany(mappedBy = "roleEntity", cascade = {CascadeType.ALL})
-    private List<UserEntity> userEntities;
+    @OneToMany(mappedBy = "pRole", cascade = {CascadeType.ALL})
+    private List<UserEntity> pUsers;
 
     //----------------GETTERS Y SETTERS ----------------------
 
-
-    public Integer getRoleId() {
-        return roleId;
+    public Integer getpRoleId() {
+        return pRoleId;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setpRoleId(Integer pRoleId) {
+        this.pRoleId = pRoleId;
     }
 
     public String getrName() {
@@ -41,11 +47,11 @@ public class RoleEntity {
         this.rName = rName;
     }
 
-    public List<UserEntity> getUserEntities() {
-        return userEntities;
+    public List<UserEntity> getpUsers() {
+        return pUsers;
     }
 
-    public void setUserEntities(List<UserEntity> userEntities) {
-        this.userEntities = userEntities;
+    public void setpUsers(List<UserEntity> pUsers) {
+        this.pUsers = pUsers;
     }
 }

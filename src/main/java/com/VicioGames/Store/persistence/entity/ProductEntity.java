@@ -1,6 +1,14 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -13,10 +21,10 @@ public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
-    private Integer productId;
+    private Integer pProductId;
 
     @Column(name = "subcategory_id")
-    private Integer subcategoryId;
+    private Integer pSubcategoryId;
 
     @Column(name = "pr_name")
     private String prName;
@@ -52,34 +60,33 @@ public class ProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "subcategory_id", insertable = false, updatable = false)
-    private SubcategoryEntity subcategories;
+    private SubcategoryEntity pSubcategory;
 
-    @OneToMany(mappedBy = "product" )
-    private List<ImageEntity> images;
+    @OneToMany(mappedBy = "pProduct" )
+    private List<ImageEntity> pImages;
 
-    @OneToMany(mappedBy = "product" )
-    private List<CommentEntity> comments;
+    @OneToMany(mappedBy = "pProduct" )
+    private List<CommentEntity> pComments;
 
-    @OneToMany(mappedBy = "product")
-    private List<ProductPurchaseEntity> purchases;
+    @OneToMany(mappedBy = "pProduct")
+    private List<ProductPurchaseEntity> pPurchases;
 
     //----------------GETTER AND SETTER--------------------------
 
-
-    public Integer getProductId() {
-        return productId;
+    public Integer getpProductId() {
+        return pProductId;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setpProductId(Integer pProductId) {
+        this.pProductId = pProductId;
     }
 
-    public Integer getSubcategoryId() {
-        return subcategoryId;
+    public Integer getpSubcategoryId() {
+        return pSubcategoryId;
     }
 
-    public void setSubcategoryId(Integer subcategoryId) {
-        this.subcategoryId = subcategoryId;
+    public void setpSubcategoryId(Integer pSubcategoryId) {
+        this.pSubcategoryId = pSubcategoryId;
     }
 
     public String getPrName() {
@@ -162,35 +169,35 @@ public class ProductEntity {
         this.prStatus = prStatus;
     }
 
-    public SubcategoryEntity getSubcategories() {
-        return subcategories;
+    public SubcategoryEntity getpSubcategory() {
+        return pSubcategory;
     }
 
-    public void setSubcategories(SubcategoryEntity subcategories) {
-        this.subcategories = subcategories;
+    public void setpSubcategory(SubcategoryEntity pSubcategory) {
+        this.pSubcategory = pSubcategory;
     }
 
-    public List<ImageEntity> getImages() {
-        return images;
+    public List<ImageEntity> getpImages() {
+        return pImages;
     }
 
-    public void setImages(List<ImageEntity> images) {
-        this.images = images;
+    public void setpImages(List<ImageEntity> pImages) {
+        this.pImages = pImages;
     }
 
-    public List<CommentEntity> getComments() {
-        return comments;
+    public List<CommentEntity> getpComments() {
+        return pComments;
     }
 
-    public void setComments(List<CommentEntity> comments) {
-        this.comments = comments;
+    public void setpComments(List<CommentEntity> pComments) {
+        this.pComments = pComments;
     }
 
-    public List<ProductPurchaseEntity> getPurchases() {
-        return purchases;
+    public List<ProductPurchaseEntity> getpPurchases() {
+        return pPurchases;
     }
 
-    public void setPurchases(List<ProductPurchaseEntity> purchases) {
-        this.purchases = purchases;
+    public void setpPurchases(List<ProductPurchaseEntity> pPurchases) {
+        this.pPurchases = pPurchases;
     }
 }

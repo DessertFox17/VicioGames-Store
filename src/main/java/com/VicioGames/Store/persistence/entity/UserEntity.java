@@ -1,6 +1,14 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -13,10 +21,10 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Integer userId;
+    private Integer pUserId;
 
     @Column(name = "role_id")
-    private Integer roleId;
+    private Integer pRoleId;
 
     @Column(name = "u_fname")
     private String uFName;
@@ -54,33 +62,31 @@ public class UserEntity {
     //----------------RELATIONSHIPS--------------------------
 
     @ManyToOne
-    @MapsId("roleId")
     @JoinColumn(name = "role_id", updatable = false, insertable = false)
-    private RoleEntity roleEntity;
+    private RoleEntity pRole;
 
-    @OneToMany(mappedBy = "user")
-    private List<PurchaseEntity> purchaseEntities;
+    @OneToMany(mappedBy = "pUser")
+    private List<PurchaseEntity> pPurchases;
 
-    @OneToMany(mappedBy = "user")
-    private List<CommentEntity> commentEntities;
+    @OneToMany(mappedBy = "pUser")
+    private List<CommentEntity> pComments;
 
     //----------------GETTERS Y SETTERS ----------------------
 
-
-    public Integer getUserId() {
-        return userId;
+    public Integer getpUserId() {
+        return pUserId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setpUserId(Integer pUserId) {
+        this.pUserId = pUserId;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public Integer getpRoleId() {
+        return pRoleId;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setpRoleId(Integer pRoleId) {
+        this.pRoleId = pRoleId;
     }
 
     public String getuFName() {
@@ -171,27 +177,27 @@ public class UserEntity {
         this.uStatus = uStatus;
     }
 
-    public RoleEntity getRoleEntity() {
-        return roleEntity;
+    public RoleEntity getpRole() {
+        return pRole;
     }
 
-    public void setRoleEntity(RoleEntity roleEntity) {
-        this.roleEntity = roleEntity;
+    public void setpRole(RoleEntity pRole) {
+        this.pRole = pRole;
     }
 
-    public List<PurchaseEntity> getPurchaseEntities() {
-        return purchaseEntities;
+    public List<PurchaseEntity> getpPurchases() {
+        return pPurchases;
     }
 
-    public void setPurchaseEntities(List<PurchaseEntity> purchaseEntities) {
-        this.purchaseEntities = purchaseEntities;
+    public void setpPurchases(List<PurchaseEntity> pPurchases) {
+        this.pPurchases = pPurchases;
     }
 
-    public List<CommentEntity> getCommentEntities() {
-        return commentEntities;
+    public List<CommentEntity> getpComments() {
+        return pComments;
     }
 
-    public void setCommentEntities(List<CommentEntity> commentEntities) {
-        this.commentEntities = commentEntities;
+    public void setpComments(List<CommentEntity> pComments) {
+        this.pComments = pComments;
     }
 }

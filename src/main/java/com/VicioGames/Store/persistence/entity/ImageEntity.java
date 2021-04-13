@@ -1,6 +1,13 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name = "image")
@@ -11,7 +18,7 @@ public class ImageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "image_id")
-    private Integer imageId;
+    private Integer pImageId;
 
     @Column(name = "i_URL")
     private String iURL;
@@ -20,17 +27,16 @@ public class ImageEntity {
 
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
-    private ProductEntity product;
+    private ProductEntity pProduct;
 
     //----------------GETTER AND SETTER--------------------------
 
-
-    public Integer getImageId() {
-        return imageId;
+    public Integer getpImageId() {
+        return pImageId;
     }
 
-    public void setImageId(Integer imageId) {
-        this.imageId = imageId;
+    public void setpImageId(Integer pImageId) {
+        this.pImageId = pImageId;
     }
 
     public String getiURL() {
@@ -41,11 +47,11 @@ public class ImageEntity {
         this.iURL = iURL;
     }
 
-    public ProductEntity getProduct() {
-        return product;
+    public ProductEntity getpProduct() {
+        return pProduct;
     }
 
-    public void setProduct(ProductEntity product) {
-        this.product = product;
+    public void setpProduct(ProductEntity pProduct) {
+        this.pProduct = pProduct;
     }
 }

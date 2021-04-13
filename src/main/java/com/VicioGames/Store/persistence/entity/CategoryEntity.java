@@ -1,6 +1,12 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
@@ -12,7 +18,7 @@ public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
-    private Integer categoryId;
+    private Integer pCategoryId;
 
     @Column(name = "cat_name")
     private String catName;
@@ -25,17 +31,17 @@ public class CategoryEntity {
 
     //----------------RELATIONSHIPS--------------------------
 
-    @OneToMany(mappedBy = "category")
-    private List<SubcategoryEntity> subcategories;
+    @OneToMany(mappedBy = "pCategory")
+    private List<SubcategoryEntity> pSubcategories;
 
     //----------------GETTER AND SETTER--------------------------
 
-    public Integer getCategoryId() {
-        return categoryId;
+    public Integer getpCategoryId() {
+        return pCategoryId;
     }
 
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
+    public void setpCategoryId(Integer pCategoryId) {
+        this.pCategoryId = pCategoryId;
     }
 
     public String getCatName() {
@@ -62,11 +68,11 @@ public class CategoryEntity {
         this.catStatus = catStatus;
     }
 
-    public List<SubcategoryEntity> getSubcategories() {
-        return subcategories;
+    public List<SubcategoryEntity> getpSubcategories() {
+        return pSubcategories;
     }
 
-    public void setSubcategories(List<SubcategoryEntity> subcategories) {
-        this.subcategories = subcategories;
+    public void setpSubcategories(List<SubcategoryEntity> pSubcategories) {
+        this.pSubcategories = pSubcategories;
     }
 }

@@ -5,8 +5,8 @@ import java.util.List;
 
 public class UserDto {
 
-    private int userId;
-    private int roleId;
+    private int uId;
+    private int rId;
     private String firstName;
     private String lastName;
     private int idNumber;
@@ -24,21 +24,20 @@ public class UserDto {
 
     //----------------GETTERS Y SETTERS ----------------------
 
-
-    public int getUserId() {
-        return userId;
+    public int getuId() {
+        return uId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setuId(int uId) {
+        this.uId = uId;
     }
 
-    public int getRoleId() {
-        return roleId;
+    public int getrId() {
+        return rId;
     }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
+    public void setrId(int rId) {
+        this.rId = rId;
     }
 
     public String getFirstName() {

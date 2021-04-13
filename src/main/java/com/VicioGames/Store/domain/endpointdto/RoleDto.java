@@ -4,18 +4,18 @@ import java.util.List;
 
 public class RoleDto {
 
-    private int id;
+    private int rId;
     private String role;
     private List<UserDto> users;
 
     //----------------GETTERS Y SETTERS ----------------------
 
-    public int getId() {
-        return id;
+    public int getrId() {
+        return rId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setrId(int rId) {
+        this.rId = rId;
     }
 
     public String getRole() {

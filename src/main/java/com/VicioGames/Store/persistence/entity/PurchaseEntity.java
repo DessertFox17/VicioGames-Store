@@ -1,16 +1,17 @@
 package com.VicioGames.Store.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import java.util.List;
+import java.time.LocalDateTime;
 
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "purchaseId")
-@Data
 @Entity
 @Table(name = "purchase")
 public class PurchaseEntity {
@@ -19,14 +20,14 @@ public class PurchaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "purchase_id")
-    private Integer purchaseId;
+    @Column(name = "Purchase_id")
+    private Integer pPurchaseId;
 
     @Column(name = "status_id")
-    private Integer statusId;
+    private Integer pStatusId;
 
     @Column(name = "user_id")
-    private Integer userId;
+    private Integer pUserId;
 
     @Column(name = "p_date")
     private LocalDateTime pDate;
@@ -41,13 +42,86 @@ public class PurchaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "status_id", insertable = false, updatable = false)
-    private StatusEntity status;
+    private StatusEntity pStatus;
 
     @ManyToOne
     @JoinColumn(name = "user_id",insertable = false, updatable = false)
-    private UserEntity user;
+    private UserEntity pUser;
 
-    @OneToMany(mappedBy = "purchase")
-    private List<ProductPurchaseEntity> products;
+    @OneToMany(mappedBy = "pPurchase")
+    private List<ProductPurchaseEntity> pProducts;
 
+    //----------------GETTER AND SETTER--------------------------
+
+    public Integer getpPurchaseId() {
+        return pPurchaseId;
+    }
+
+    public void setpPurchaseId(Integer pPurchaseId) {
+        this.pPurchaseId = pPurchaseId;
+    }
+
+    public Integer getpStatusId() {
+        return pStatusId;
+    }
+
+    public void setpStatusId(Integer pStatusId) {
+        this.pStatusId = pStatusId;
+    }
+
+    public Integer getpUserId() {
+        return pUserId;
+    }
+
+    public void setpUserId(Integer pUserId) {
+        this.pUserId = pUserId;
+    }
+
+    public LocalDateTime getpDate() {
+        return pDate;
+    }
+
+    public void setpDate(LocalDateTime pDate) {
+        this.pDate = pDate;
+    }
+
+    public String getpPayMeth() {
+        return pPayMeth;
+    }
+
+    public void setpPayMeth(String pPayMeth) {
+        this.pPayMeth = pPayMeth;
+    }
+
+    public String getpComment() {
+        return pComment;
+    }
+
+    public void setpComment(String pComment) {
+        this.pComment = pComment;
+    }
+
+    public StatusEntity getpStatus() {
+        return pStatus;
+    }
+
+    public void setpStatus(StatusEntity pStatus) {
+        this.pStatus = pStatus;
+    }
+
+    public UserEntity getpUser() {
+        return pUser;
+    }
+
+    public void setpUser(UserEntity pUser) {
+        this.pUser = pUser;
+    }
+
+    public List<ProductPurchaseEntity> getpProducts() {
+        return pProducts;
+    }
+
+    public void setpProducts(List<ProductPurchaseEntity> pProducts) {
+        this.pProducts = pProducts;
+    }
 }

@@ -13,8 +13,8 @@ import java.util.List;
 public interface UserMapper {
 
     @Mappings({
-            @Mapping(source = "userId", target = "userId"),
-            @Mapping(source = "roleId", target = "roleId"),
+            @Mapping(source = "pUserId", target = "uId"),
+            @Mapping(source = "pRoleId", target = "rId"),
             @Mapping(source = "uFName", target = "firstName"),
             @Mapping(source = "uLName", target = "lastName"),
             @Mapping(source = "uDNINumbr", target = "idNumber"),
@@ -26,12 +26,12 @@ public interface UserMapper {
             @Mapping(source = "uEmail", target = "email"),
             @Mapping(source = "uPassword", target = "password"),
             @Mapping(source = "uStatus", target = "status"),
-            @Mapping(source = "roleEntity", target = "role")
-            //@Mapping(source = "purchaseEntities", target = "purchases"),
-            //@Mapping(source = "commentEntities", target = "Comments")
+            @Mapping(source = "pRole", target = "role"),
+            @Mapping(source = "pPurchases", target = "purchases"),
+            @Mapping(source = "pComments", target = "comments")
     }) UserDto toUserDto(UserEntity userEntity);
 
-    List<UserDto> toUsersDto(List<UserEntity> userEntities);
+    List<UserDto> toUsersDto(List<UserEntity> usersList);
 
     @InheritInverseConfiguration
     UserEntity toUserEntity(UserDto userDto);

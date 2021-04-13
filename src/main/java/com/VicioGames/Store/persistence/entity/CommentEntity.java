@@ -1,14 +1,14 @@
 package com.VicioGames.Store.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "commentId")
-@Data
 @Entity
 @Table(name = "comment")
 public class CommentEntity {
@@ -18,13 +18,13 @@ public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_id")
-    private Integer commentId;
+    private Integer pCommentId;
 
     @Column(name = "product_id")
-    private Integer productId;
+    private Integer pProductId;
 
     @Column(name = "user_id")
-    private Integer userId;
+    private Integer pUserId;
 
     @Column(name = "c_comment")
     private String cComment;
@@ -36,37 +36,36 @@ public class CommentEntity {
 
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
-    private ProductEntity product;
+    private ProductEntity pProduct;
 
     @ManyToOne
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
-    private UserEntity user;
+    private UserEntity pUser;
 
     //----------------GETTER AND SETTER--------------------------
 
-
-    public Integer getCommentId() {
-        return commentId;
+    public Integer getpCommentId() {
+        return pCommentId;
     }
 
-    public void setCommentId(Integer commentId) {
-        this.commentId = commentId;
+    public void setpCommentId(Integer pCommentId) {
+        this.pCommentId = pCommentId;
     }
 
-    public Integer getProductId() {
-        return productId;
+    public Integer getpProductId() {
+        return pProductId;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public void setpProductId(Integer pProductId) {
+        this.pProductId = pProductId;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getpUserId() {
+        return pUserId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setpUserId(Integer pUserId) {
+        this.pUserId = pUserId;
     }
 
     public String getcComment() {
@@ -85,19 +84,19 @@ public class CommentEntity {
         this.cQualification = cQualification;
     }
 
-    public ProductEntity getProduct() {
-        return product;
+    public ProductEntity getpProduct() {
+        return pProduct;
     }
 
-    public void setProduct(ProductEntity product) {
-        this.product = product;
+    public void setpProduct(ProductEntity pProduct) {
+        this.pProduct = pProduct;
     }
 
-    public UserEntity getUser() {
-        return user;
+    public UserEntity getpUser() {
+        return pUser;
     }
 
-    public void setUser(UserEntity user) {
-        this.user = user;
+    public void setpUser(UserEntity pUser) {
+        this.pUser = pUser;
     }
 }
