@@ -14,11 +14,11 @@ public class RoleService {
     @Autowired
     private RoleDomainRepository roleDomainRepository;
 
-    public List<RoleDto> getAll(){
-        return roleDomainRepository.getAll();
+    public Optional<List<RoleDto>> getByRole(String role){
+        return roleDomainRepository.getByRole(role);
     }
 
-    /*public Optional<List<RoleDto>> getByRoleType(int id){
-        return roleDomainRepository.getByRoleType(id);
-    }*/
+
+
+
 }

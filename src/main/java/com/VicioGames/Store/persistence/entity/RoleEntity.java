@@ -1,13 +1,6 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Column;
-import javax.persistence.GenerationType;
-import javax.persistence.OneToMany;
-import javax.persistence.CascadeType;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -26,12 +19,12 @@ public class RoleEntity {
 
     //----------------RELATIONSHIPS--------------------------
 
-    @OneToMany(mappedBy = "pRole", cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "pRole")
     private List<UserEntity> pUsers;
 
     //----------------GETTERS Y SETTERS ----------------------
 
-    public Integer getpRoleId() {
+   public Integer getpRoleId() {
         return pRoleId;
     }
 

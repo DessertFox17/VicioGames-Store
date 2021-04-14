@@ -2,39 +2,37 @@ package com.VicioGames.Store.domain.endpointdto;
 
 public class CommentDto {
 
-    private int commentId;
-    private int productId;
-    private int userId;
+    private int cId;
+    private int prId;
+    private int uId;
     private String comment;
-    private float quialification;
-    private ProductDto product;
-    private UserDto user;
+    private float qualification;
 
     //----------------GETTER AND SETTER--------------------------
 
 
-    public int getCommentId() {
-        return commentId;
+    public int getcId() {
+        return cId;
     }
 
-    public void setCommentId(int commentId) {
-        this.commentId = commentId;
+    public void setcId(int cId) {
+        this.cId = cId;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getPrId() {
+        return prId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setPrId(int prId) {
+        this.prId = prId;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getuId() {
+        return uId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setuId(int uId) {
+        this.uId = uId;
     }
 
     public String getComment() {
@@ -45,27 +43,11 @@ public class CommentDto {
         this.comment = comment;
     }
 
-    public float getQuialification() {
-        return quialification;
+    public float getQualification() {
+        return qualification;
     }
 
-    public void setQuialification(float quialification) {
-        this.quialification = quialification;
-    }
-
-    public ProductDto getProduct() {
-        return product;
-    }
-
-    public void setProduct(ProductDto product) {
-        this.product = product;
-    }
-
-    public UserDto getUser() {
-        return user;
-    }
-
-    public void setUser(UserDto user) {
-        this.user = user;
+    public void setQualification(float qualification) {
+        this.qualification = qualification;
     }
 }

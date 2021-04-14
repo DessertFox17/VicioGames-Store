@@ -1,49 +1,44 @@
 package com.VicioGames.Store.domain.endpointdto;
 
-import com.VicioGames.Store.persistence.entity.ProductPurchaseEntity;
-import com.VicioGames.Store.persistence.entity.StatusEntity;
-import com.VicioGames.Store.persistence.entity.UserEntity;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class PurchaseDto {
-
-    private int purchaseId;
-    private int statusId;
-    private int userId;
+    private int puId;
+    private int stId;
+    private int uId;
     private LocalDateTime date;
-    private String paymentMethod;
+    private String payMeth;
     private String comment;
-    private StatusEntity status;
-    private UserEntity user;
-    private List<ProductPurchaseEntity> products;
+    //private StatusDto status;
+    //private UserDto user;
+    private List<ProductPurchaseDto> products;
 
     //----------------GETTER AND SETTER--------------------------
 
 
-    public int getPurchaseId() {
-        return purchaseId;
+    public int getPuId() {
+        return puId;
     }
 
-    public void setPurchaseId(int purchaseId) {
-        this.purchaseId = purchaseId;
+    public void setPuId(int puId) {
+        this.puId = puId;
     }
 
-    public int getStatusId() {
-        return statusId;
+    public int getStId() {
+        return stId;
     }
 
-    public void setStatusId(int statusId) {
-        this.statusId = statusId;
+    public void setStId(int stId) {
+        this.stId = stId;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getuId() {
+        return uId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setuId(int uId) {
+        this.uId = uId;
     }
 
     public LocalDateTime getDate() {
@@ -54,12 +49,12 @@ public class PurchaseDto {
         this.date = date;
     }
 
-    public String getPaymentMethod() {
-        return paymentMethod;
+    public String getPayMeth() {
+        return payMeth;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public void setPayMeth(String payMeth) {
+        this.payMeth = payMeth;
     }
 
     public String getComment() {
@@ -70,27 +65,19 @@ public class PurchaseDto {
         this.comment = comment;
     }
 
-    public StatusEntity getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusEntity status) {
-        this.status = status;
-    }
-
-    public UserEntity getUser() {
+/*    public UserDto getUser() {
         return user;
     }
 
-    public void setUser(UserEntity user) {
+    public void setUser(UserDto user) {
         this.user = user;
-    }
+    }*/
 
-    public List<ProductPurchaseEntity> getProducts() {
+    public List<ProductPurchaseDto> getProducts() {
         return products;
     }
 
-    public void setProducts(List<ProductPurchaseEntity> products) {
+    public void setProducts(List<ProductPurchaseDto> products) {
         this.products = products;
     }
 }

@@ -8,7 +8,9 @@ import java.util.Optional;
 public interface UserDomainRepository {
 
     List<UserDto> getAll();
-    Optional<UserDto> getByUserId(int userId);
+    Optional<UserDto> getByUserId(int uId);
+    Optional<List<UserDto>> getByRoleId(int rId);
     UserDto createUser(UserDto userDto);
     UserDto updateUser(UserDto userDto);
+    void deleteUser(int uId);
 }

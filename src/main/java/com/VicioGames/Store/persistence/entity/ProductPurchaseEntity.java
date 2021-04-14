@@ -1,11 +1,6 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.EmbeddedId;
-import javax.persistence.ManyToOne;
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "product_purchase")
@@ -35,10 +30,12 @@ public class ProductPurchaseEntity {
     private ProductEntity pProduct;
 
     @ManyToOne
+    @MapsId("pPurchaseId")
     @JoinColumn(name = "purchase_id", insertable = false, updatable = false)
     private PurchaseEntity pPurchase;
 
     //----------------GETTER AND SETTER--------------------------
+
 
     public ProductPurchasePKEntity getpId() {
         return pId;

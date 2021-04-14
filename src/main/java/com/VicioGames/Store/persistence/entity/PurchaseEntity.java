@@ -1,14 +1,6 @@
 package com.VicioGames.Store.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Column;
-import javax.persistence.GenerationType;
-import javax.persistence.OneToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 import java.util.List;
 import java.time.LocalDateTime;
 
@@ -48,10 +40,11 @@ public class PurchaseEntity {
     @JoinColumn(name = "user_id",insertable = false, updatable = false)
     private UserEntity pUser;
 
-    @OneToMany(mappedBy = "pPurchase")
+    @OneToMany(mappedBy = "pPurchase", cascade = {CascadeType.ALL})
     private List<ProductPurchaseEntity> pProducts;
 
     //----------------GETTER AND SETTER--------------------------
+
 
     public Integer getpPurchaseId() {
         return pPurchaseId;

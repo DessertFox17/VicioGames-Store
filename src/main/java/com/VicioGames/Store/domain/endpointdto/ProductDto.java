@@ -5,39 +5,40 @@ import java.util.List;
 
 public class ProductDto {
 
-    private int productId;
-    private int subcategoryId;
+    private int prId;
+    private int sId;
     private String name;
     private double price;
     private int stock;
     private double shipCost;
     private String tumbnail;
-    private LocalDateTime creationDate;
+    private LocalDateTime publicDate;
     private String description;
     private String details;
     private int searchCounter;
     private boolean status;
     private SubcategoryDto subcategory;
-    private List<ImageDto> images;
+    // private List<CategoryDto> images;
     private List<CommentDto> comments;
-    private List<PurchaseDto> purchases;
+    //private List<PurchaseDto> purchases;*/
 
     //----------------GETTER AND SETTER--------------------------
 
-    public int getProductId() {
-        return productId;
+
+    public int getPrId() {
+        return prId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setPrId(int prId) {
+        this.prId = prId;
     }
 
-    public int getSubcategoryId() {
-        return subcategoryId;
+    public int getsId() {
+        return sId;
     }
 
-    public void setSubcategoryId(int subcategoryId) {
-        this.subcategoryId = subcategoryId;
+    public void setsId(int sId) {
+        this.sId = sId;
     }
 
     public String getName() {
@@ -80,12 +81,12 @@ public class ProductDto {
         this.tumbnail = tumbnail;
     }
 
-    public LocalDateTime getCreationDate() {
-        return creationDate;
+    public LocalDateTime getPublicDate() {
+        return publicDate;
     }
 
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
+    public void setPublicDate(LocalDateTime publicDate) {
+        this.publicDate = publicDate;
     }
 
     public String getDescription() {
@@ -128,13 +129,13 @@ public class ProductDto {
         this.subcategory = subcategory;
     }
 
-    public List<ImageDto> getImages() {
+/*    public List<CategoryDto> getImages() {
         return images;
     }
 
-    public void setImages(List<ImageDto> images) {
+    public void setImages(List<CategoryDto> images) {
         this.images = images;
-    }
+    }*/
 
     public List<CommentDto> getComments() {
         return comments;
@@ -144,11 +145,11 @@ public class ProductDto {
         this.comments = comments;
     }
 
-    public List<PurchaseDto> getPurchases() {
+/*    public List<PurchaseDto> getPurchases() {
         return purchases;
     }
 
     public void setPurchases(List<PurchaseDto> purchases) {
         this.purchases = purchases;
-    }
+    }*/
 }

@@ -1,16 +1,15 @@
 package com.VicioGames.Store.domain.endpointdto;
 
-import java.util.List;
 
 public class RoleDto {
 
     private int rId;
     private String role;
-    private List<UserDto> users;
+    //private List<UserDto> users;
 
     //----------------GETTERS Y SETTERS ----------------------
 
-    public int getrId() {
+   public int getrId() {
         return rId;
     }
 
@@ -26,12 +25,17 @@ public class RoleDto {
         this.role = role;
     }
 
-    public List<UserDto> getUsers() {
+/*    public List<UserDto> getUsers() {
         return users;
     }
 
     public void setUsers(List<UserDto> users) {
         this.users = users;
-    }
+    }*/
 }
+
+
+
+
+
 

@@ -30,8 +30,14 @@ public class UserPersistenceRepository implements UserDomainRepository {
     }
 
     @Override
-    public Optional<UserDto> getByUserId(int userId) {
-        return userEntityCrudRepository.findById(userId).map(userEntity -> mapper.toUserDto(userEntity));
+    public Optional<UserDto> getByUserId(int uId) {
+        return userEntityCrudRepository.findById(uId).map(userEntity -> mapper.toUserDto(userEntity));
+    }
+
+    @Override
+    public Optional<List<UserDto>> getByRoleId(int rId) {
+        List<UserEntity> userEntities  = userEntityCrudRepository.findBypRoleId((rId));
+        return Optional.of(mapper.toUsersDto(userEntities));
     }
 
     @Override
@@ -45,4 +51,10 @@ public class UserPersistenceRepository implements UserDomainRepository {
         UserEntity userEntity = mapper.toUserEntity(userDto);
         return mapper.toUserDto(userEntityCrudRepository.save(userEntity));
     }
+
+    @Override
+    public void deleteUser(int uId) {
+        userEntityCrudRepository.deleteById(uId);
+    }
+
 }

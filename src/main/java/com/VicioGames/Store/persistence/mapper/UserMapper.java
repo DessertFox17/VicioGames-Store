@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {RoleMapper.class})
+@Mapper(componentModel = "spring",uses = {RoleMapper.class})
 public interface UserMapper {
 
     @Mappings({
@@ -26,14 +26,16 @@ public interface UserMapper {
             @Mapping(source = "uEmail", target = "email"),
             @Mapping(source = "uPassword", target = "password"),
             @Mapping(source = "uStatus", target = "status"),
-            @Mapping(source = "pRole", target = "role"),
-            @Mapping(source = "pPurchases", target = "purchases"),
-            @Mapping(source = "pComments", target = "comments")
+            @Mapping(source = "pRole", target = "role")
     }) UserDto toUserDto(UserEntity userEntity);
 
     List<UserDto> toUsersDto(List<UserEntity> usersList);
 
     @InheritInverseConfiguration
+    @Mappings({
+            @Mapping(target = "pPurchases", ignore = true),
+            @Mapping(target = "pComments", ignore = true),
+    })
     UserEntity toUserEntity(UserDto userDto);
 
 }

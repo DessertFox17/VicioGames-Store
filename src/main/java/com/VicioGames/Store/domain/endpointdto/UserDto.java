@@ -1,7 +1,6 @@
 package com.VicioGames.Store.domain.endpointdto;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class UserDto {
 
@@ -19,8 +18,6 @@ public class UserDto {
     private String password;
     private boolean status;
     private RoleDto role;
-    private List<PurchaseDto> purchases;
-    private List<CommentDto> comments;
 
     //----------------GETTERS Y SETTERS ----------------------
 
@@ -136,19 +133,4 @@ public class UserDto {
         this.role = role;
     }
 
-    public List<PurchaseDto> getPurchases() {
-        return purchases;
-    }
-
-    public void setPurchases(List<PurchaseDto> purchases) {
-        this.purchases = purchases;
-    }
-
-    public List<CommentDto> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<CommentDto> comments) {
-        this.comments = comments;
-    }
 }

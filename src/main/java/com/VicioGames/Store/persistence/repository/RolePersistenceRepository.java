@@ -19,15 +19,9 @@ public class RolePersistenceRepository implements RoleDomainRepository {
     @Autowired
     private RoleMapper mapper;
 
-
     @Override
-    public List<RoleDto> getAll() {
-        return mapper.toRolesDto((List< RoleEntity >)roleEntityCrudRepository.findAll());
+    public Optional<List<RoleDto>> getByRole(String role) {
+        List<RoleEntity> roleEntities = roleEntityCrudRepository.findByrName(role);
+        return Optional.of(mapper.toRolesDto(roleEntities));
     }
-
-   /* @Override
-    public Optional<List<RoleDto>> getByRoleType(int id) {
-        return roleEntityCrudRepository.findByRoleId(id)
-                .map(roleEntities  -> mapper.toRolesDto(roleEntities));
-    }*/
 }

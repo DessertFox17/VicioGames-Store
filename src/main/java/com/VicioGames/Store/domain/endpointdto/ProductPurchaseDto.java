@@ -1,35 +1,22 @@
 package com.VicioGames.Store.domain.endpointdto;
 
-import com.VicioGames.Store.persistence.entity.ProductEntity;
-import com.VicioGames.Store.persistence.entity.PurchaseEntity;
-
 public class ProductPurchaseDto {
 
-    private int productId;
-    private int purchaseId;
+    private int prId;
     private int quantity;
-    private double totalShipCost;
-    private double totalProductsCost;
-    private double totalPurchaseCost;
-    private ProductEntity products;
-    private PurchaseEntity purchases;
+    private double totProductsCost;
+    private double totShipCost;
+    private double purchaseCost;
 
     //----------------GETTER AND SETTER--------------------------
 
-    public int getProductId() {
-        return productId;
+
+    public int getPrId() {
+        return prId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public int getPurchaseId() {
-        return purchaseId;
-    }
-
-    public void setPurchaseId(int purchaseId) {
-        this.purchaseId = purchaseId;
+    public void setPrId(int prId) {
+        this.prId = prId;
     }
 
     public int getQuantity() {
@@ -40,43 +27,27 @@ public class ProductPurchaseDto {
         this.quantity = quantity;
     }
 
-    public double getTotalShipCost() {
-        return totalShipCost;
+    public double getTotProductsCost() {
+        return totProductsCost;
     }
 
-    public void setTotalShipCost(double totalShipCost) {
-        this.totalShipCost = totalShipCost;
+    public void setTotProductsCost(double totProductsCost) {
+        this.totProductsCost = totProductsCost;
     }
 
-    public double getTotalProductsCost() {
-        return totalProductsCost;
+    public double getTotShipCost() {
+        return totShipCost;
     }
 
-    public void setTotalProductsCost(double totalProductsCost) {
-        this.totalProductsCost = totalProductsCost;
+    public void setTotShipCost(double totShipCost) {
+        this.totShipCost = totShipCost;
     }
 
-    public double getTotalPurchaseCost() {
-        return totalPurchaseCost;
+    public double getPurchaseCost() {
+        return purchaseCost;
     }
 
-    public void setTotalPurchaseCost(double totalPurchaseCost) {
-        this.totalPurchaseCost = totalPurchaseCost;
-    }
-
-    public ProductEntity getProducts() {
-        return products;
-    }
-
-    public void setProducts(ProductEntity products) {
-        this.products = products;
-    }
-
-    public PurchaseEntity getPurchases() {
-        return purchases;
-    }
-
-    public void setPurchases(PurchaseEntity purchases) {
-        this.purchases = purchases;
+    public void setPurchaseCost(double purchaseCost) {
+        this.purchaseCost = purchaseCost;
     }
 }
