@@ -7,7 +7,7 @@ public class SubcategoryDto {
     private String name;
     private String description;
     private boolean status;
-    //private CategoryDto category;
+    private CategoryDto category;
     //private List<ProductDto> products;
 
     //----------------GETTERS Y SETTERS ----------------------
@@ -53,7 +53,7 @@ public class SubcategoryDto {
         this.status = status;
     }
 
-    /*public CategoryDto getCategory() {
+    public CategoryDto getCategory() {
         return category;
     }
 
@@ -61,7 +61,7 @@ public class SubcategoryDto {
         this.category = category;
     }
 
-    public List<ProductDto> getProducts() {
+/*    public List<ProductDto> getProducts() {
         return products;
     }
 

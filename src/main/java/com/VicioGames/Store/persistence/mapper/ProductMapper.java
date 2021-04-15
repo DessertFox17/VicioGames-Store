@@ -27,6 +27,7 @@ public interface ProductMapper {
             @Mapping(source = "prSearchCount", target = "searchCounter"),
             @Mapping(source = "prStatus", target = "status"),
             @Mapping(source = "pSubcategory", target = "subcategory"),
+            @Mapping(source = "pImages", target = "images"),
             @Mapping(source = "pComments", target = "comments"),
     })
     ProductDto toProductDto(ProductEntity productEntity);
@@ -34,10 +35,6 @@ public interface ProductMapper {
     List<ProductDto> toProductsDto(List<ProductEntity> productsList);
 
     @InheritInverseConfiguration
-    @Mappings({
-            @Mapping(target = "pImages", ignore = true),
-            //@Mapping(target = "pComments", ignore = true),
-            @Mapping(target = "pPurchases", ignore = true),
-    })
+    @Mapping(target = "pPurchases", ignore = true)
     ProductEntity toProductEntity(ProductDto productDto);
 }

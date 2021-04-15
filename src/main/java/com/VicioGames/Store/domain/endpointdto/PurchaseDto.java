@@ -10,8 +10,6 @@ public class PurchaseDto {
     private LocalDateTime date;
     private String payMeth;
     private String comment;
-    //private StatusDto status;
-    //private UserDto user;
     private List<ProductPurchaseDto> products;
 
     //----------------GETTER AND SETTER--------------------------
@@ -64,14 +62,6 @@ public class PurchaseDto {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
-/*    public UserDto getUser() {
-        return user;
-    }
-
-    public void setUser(UserDto user) {
-        this.user = user;
-    }*/
 
     public List<ProductPurchaseDto> getProducts() {
         return products;
