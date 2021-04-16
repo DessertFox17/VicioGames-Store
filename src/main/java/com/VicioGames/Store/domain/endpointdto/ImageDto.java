@@ -2,10 +2,11 @@ package com.VicioGames.Store.domain.endpointdto;
 
 public class ImageDto {
     private int iId;
+    private int prId;
     private String URL;
-    private ProductDto productDto;
 
     //----------------GETTER AND SETTER--------------------------
+
 
     public int getiId() {
         return iId;
@@ -15,19 +16,19 @@ public class ImageDto {
         this.iId = iId;
     }
 
+    public int getPrId() {
+        return prId;
+    }
+
+    public void setPrId(int prId) {
+        this.prId = prId;
+    }
+
     public String getURL() {
         return URL;
     }
 
     public void setURL(String URL) {
         this.URL = URL;
-    }
-
-    public ProductDto getProductDto() {
-        return productDto;
-    }
-
-    public void setProductDto(ProductDto productDto) {
-        this.productDto = productDto;
     }
 }

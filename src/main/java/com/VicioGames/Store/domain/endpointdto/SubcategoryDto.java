@@ -8,7 +8,6 @@ public class SubcategoryDto {
     private String description;
     private boolean status;
     private CategoryDto category;
-    //private List<ProductDto> products;
 
     //----------------GETTERS Y SETTERS ----------------------
 

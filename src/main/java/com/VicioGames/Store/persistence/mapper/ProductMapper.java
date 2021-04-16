@@ -10,7 +10,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {SubcategoryMapper.class, CommentMapper.class})
+@Mapper(componentModel = "spring", uses = {SubcategoryMapper.class, CommentMapper.class, ImageMapper.class})
 public interface ProductMapper {
 
     @Mappings({

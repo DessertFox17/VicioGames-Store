@@ -14,7 +14,6 @@ public interface RoleMapper{
     @Mappings({
             @Mapping(source = "pRoleId", target = "rId"),
             @Mapping(source = "rName", target = "role"),
-            //@Mapping(source = "pUsers", target = "users")
     })
     RoleDto toRoleDto(RoleEntity roleEntity);
 

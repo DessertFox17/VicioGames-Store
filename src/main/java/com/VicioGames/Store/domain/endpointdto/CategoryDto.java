@@ -6,7 +6,6 @@ public class CategoryDto {
     private String name;
     private String description;
     private boolean status;
-    //private List<SubcategoryDto> subcategories;
 
     //----------------GETTER AND SETTER--------------------------
 

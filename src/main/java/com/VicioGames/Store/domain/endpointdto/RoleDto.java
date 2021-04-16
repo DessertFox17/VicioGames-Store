@@ -5,7 +5,6 @@ public class RoleDto {
 
     private int rId;
     private String role;
-    //private List<UserDto> users;
 
     //----------------GETTERS Y SETTERS ----------------------
 
@@ -25,13 +24,6 @@ public class RoleDto {
         this.role = role;
     }
 
-/*    public List<UserDto> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<UserDto> users) {
-        this.users = users;
-    }*/
 }
 
 

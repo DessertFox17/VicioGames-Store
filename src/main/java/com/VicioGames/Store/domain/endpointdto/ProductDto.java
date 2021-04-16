@@ -18,9 +18,8 @@ public class ProductDto {
     private int searchCounter;
     private boolean status;
     private SubcategoryDto subcategory;
-    // private List<CategoryDto> images;
+    private List<ImageDto> images;
     private List<CommentDto> comments;
-    //private List<PurchaseDto> purchases;*/
 
     //----------------GETTER AND SETTER--------------------------
 
@@ -129,13 +128,13 @@ public class ProductDto {
         this.subcategory = subcategory;
     }
 
-/*    public List<CategoryDto> getImages() {
+    public List<ImageDto> getImages() {
         return images;
     }
 
-    public void setImages(List<CategoryDto> images) {
+    public void setImages(List<ImageDto> images) {
         this.images = images;
-    }*/
+    }
 
     public List<CommentDto> getComments() {
         return comments;
@@ -145,11 +144,4 @@ public class ProductDto {
         this.comments = comments;
     }
 
-/*    public List<PurchaseDto> getPurchases() {
-        return purchases;
-    }
-
-    public void setPurchases(List<PurchaseDto> purchases) {
-        this.purchases = purchases;
-    }*/
 }
