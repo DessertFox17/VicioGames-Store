@@ -1,6 +1,6 @@
 package com.VicioGames.Store.domain.service;
 
-import com.VicioGames.Store.domain.endpointdto.UserDto;
+import com.VicioGames.Store.domain.endpointdto.postput.UserDto;
 import com.VicioGames.Store.domain.repository.UserDomainRepository;
 import com.VicioGames.Store.persistence.crud.UserEntityCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;

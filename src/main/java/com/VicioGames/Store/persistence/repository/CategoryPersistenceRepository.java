@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.repository;
 
-import com.VicioGames.Store.domain.endpointdto.CategoryDto;
+import com.VicioGames.Store.domain.endpointdto.postput.CategoryDto;
 import com.VicioGames.Store.domain.repository.CategoryDomainRepository;
 import com.VicioGames.Store.persistence.crud.CategoryEntityCrudRepository;
 import com.VicioGames.Store.persistence.mapper.CategoryMapper;

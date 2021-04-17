@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.mapper;
 
-import com.VicioGames.Store.domain.endpointdto.CommentDto;
+import com.VicioGames.Store.domain.endpointdto.postput.CommentDto;
 import com.VicioGames.Store.persistence.entity.CommentEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

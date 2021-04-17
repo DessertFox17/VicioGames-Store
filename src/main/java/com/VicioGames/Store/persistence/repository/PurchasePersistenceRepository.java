@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.repository;
 
-import com.VicioGames.Store.domain.endpointdto.PurchaseDto;
+import com.VicioGames.Store.domain.endpointdto.postput.PurchaseDto;
 import com.VicioGames.Store.domain.repository.PurchaseDomainRepository;
 import com.VicioGames.Store.persistence.crud.PurchaseEntityCrudRepository;
 import com.VicioGames.Store.persistence.entity.PurchaseEntity;

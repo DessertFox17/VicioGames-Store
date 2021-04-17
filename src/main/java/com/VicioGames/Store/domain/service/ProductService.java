@@ -1,7 +1,7 @@
 package com.VicioGames.Store.domain.service;
 
-import com.VicioGames.Store.domain.endpointdto.GetProductDto;
-import com.VicioGames.Store.domain.endpointdto.ProductDto;
+import com.VicioGames.Store.domain.endpointdto.get.GetProductDto;
+import com.VicioGames.Store.domain.endpointdto.postput.ProductDto;
 import com.VicioGames.Store.domain.repository.ProductDomainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +19,12 @@ public class ProductService {
         return productDomainRepository.getByProductId(prId);
     }
 
-    public Optional<List<ProductDto>> smartFilter(String search) {
+    public Optional<List<GetProductDto>> smartFilter(String search) {
         System.out.println(search);
         return productDomainRepository.smartFilter(search);
+    }
+
+    public ProductDto createProduct(ProductDto productDto){
+        return productDomainRepository.createProduct(productDto);
     }
 }

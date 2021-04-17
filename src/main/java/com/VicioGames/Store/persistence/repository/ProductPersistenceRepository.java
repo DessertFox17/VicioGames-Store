@@ -1,10 +1,10 @@
 package com.VicioGames.Store.persistence.repository;
 
-import com.VicioGames.Store.domain.endpointdto.GetProductDto;
-import com.VicioGames.Store.domain.endpointdto.ProductDto;
+import com.VicioGames.Store.domain.endpointdto.get.GetProductDto;
+import com.VicioGames.Store.domain.endpointdto.postput.ProductDto;
 import com.VicioGames.Store.domain.repository.ProductDomainRepository;
 import com.VicioGames.Store.persistence.crud.ProductEntityCrudRepository;
-import com.VicioGames.Store.persistence.mapper.GetProductMapper;
+import com.VicioGames.Store.persistence.entity.ProductEntity;
 import com.VicioGames.Store.persistence.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,20 +21,23 @@ public class ProductPersistenceRepository implements ProductDomainRepository {
     @Autowired
     private ProductMapper mapper;
 
-    @Autowired
-    private GetProductMapper mapper2;
-
 
     @Override
     public Optional<GetProductDto> getByProductId(int prId) {
-        return productEntityCrudRepository.findById(prId).map(productEntity ->  mapper2.toGetProductDto(productEntity));
+        return productEntityCrudRepository.findById(prId).map(productEntity -> mapper.toGetProductDto(productEntity));
     }
 
     @Override
-    public Optional<List<ProductDto>> smartFilter(String search) {
+    public Optional<List<GetProductDto>> smartFilter(String search) {
         return productEntityCrudRepository.findByPrNameContaining(search)
-                .map(productEntities -> mapper.toProductsDto(productEntities));
+                .map(productEntities -> mapper.toGetProductsDto(productEntities));
 
+    }
+
+    @Override
+    public ProductDto createProduct(ProductDto productDto) {
+        ProductEntity productEntity = mapper.toProductEntity(productDto);
+        return mapper.toProductDto(productEntityCrudRepository.save(productEntity));
     }
 
 }

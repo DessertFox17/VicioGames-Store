@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.repository;
 
-import com.VicioGames.Store.domain.endpointdto.ImageDto;
+import com.VicioGames.Store.domain.endpointdto.postput.ImageDto;
 import com.VicioGames.Store.domain.repository.ImageDomainRepository;
 import com.VicioGames.Store.persistence.crud.ImageEntityCrudRepository;
 import com.VicioGames.Store.persistence.entity.ImageEntity;

@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.mapper;
 
-import com.VicioGames.Store.domain.endpointdto.ImageDto;
+import com.VicioGames.Store.domain.endpointdto.postput.ImageDto;
 import com.VicioGames.Store.persistence.entity.ImageEntity;
 import org.mapstruct.*;
 

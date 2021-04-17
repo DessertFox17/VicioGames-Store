@@ -1,4 +1,4 @@
-package com.VicioGames.Store.domain.endpointdto;
+package com.VicioGames.Store.domain.endpointdto.postput;
 
 
 public class RoleDto {

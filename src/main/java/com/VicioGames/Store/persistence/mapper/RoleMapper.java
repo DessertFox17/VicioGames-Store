@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.mapper;
 
-import com.VicioGames.Store.domain.endpointdto.RoleDto;
+import com.VicioGames.Store.domain.endpointdto.postput.RoleDto;
 import com.VicioGames.Store.persistence.entity.RoleEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

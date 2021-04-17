@@ -1,44 +1,25 @@
-package com.VicioGames.Store.domain.endpointdto;
+package com.VicioGames.Store.domain.endpointdto.get;
+
+import com.VicioGames.Store.domain.endpointdto.postput.CommentDto;
+import com.VicioGames.Store.domain.endpointdto.postput.ImageDto;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class ProductDto {
-
-    private int prId;
-    private int sId;
+public class GetProductDto {
     private String name;
     private double price;
     private int stock;
     private double shipCost;
     private String tumbnail;
-    private LocalDateTime publicDate;
+    private LocalDateTime publicationDate;
     private String description;
     private String details;
-    private int searchCounter;
-    private boolean status;
-    private SubcategoryDto subcategory;
+    private GetSubcategoryDto subcategory;
     private List<ImageDto> images;
     private List<CommentDto> comments;
 
     //----------------GETTER AND SETTER--------------------------
-
-
-    public int getPrId() {
-        return prId;
-    }
-
-    public void setPrId(int prId) {
-        this.prId = prId;
-    }
-
-    public int getsId() {
-        return sId;
-    }
-
-    public void setsId(int sId) {
-        this.sId = sId;
-    }
 
     public String getName() {
         return name;
@@ -80,12 +61,12 @@ public class ProductDto {
         this.tumbnail = tumbnail;
     }
 
-    public LocalDateTime getPublicDate() {
-        return publicDate;
+    public LocalDateTime getPublicationDate() {
+        return publicationDate;
     }
 
-    public void setPublicDate(LocalDateTime publicDate) {
-        this.publicDate = publicDate;
+    public void setPublicationDate(LocalDateTime publicationDate) {
+        this.publicationDate = publicationDate;
     }
 
     public String getDescription() {
@@ -104,27 +85,11 @@ public class ProductDto {
         this.details = details;
     }
 
-    public int getSearchCounter() {
-        return searchCounter;
-    }
-
-    public void setSearchCounter(int searchCounter) {
-        this.searchCounter = searchCounter;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public SubcategoryDto getSubcategory() {
+    public GetSubcategoryDto getSubcategory() {
         return subcategory;
     }
 
-    public void setSubcategory(SubcategoryDto subcategory) {
+    public void setSubcategory(GetSubcategoryDto subcategory) {
         this.subcategory = subcategory;
     }
 
@@ -143,5 +108,4 @@ public class ProductDto {
     public void setComments(List<CommentDto> comments) {
         this.comments = comments;
     }
-
 }

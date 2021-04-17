@@ -1,6 +1,6 @@
 package com.VicioGames.Store.domain.repository;
 
-import com.VicioGames.Store.domain.endpointdto.StatusDto;
+import com.VicioGames.Store.domain.endpointdto.postput.StatusDto;
 
 import java.util.List;
 

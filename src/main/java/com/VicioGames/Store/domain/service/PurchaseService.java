@@ -1,6 +1,6 @@
 package com.VicioGames.Store.domain.service;
 
-import com.VicioGames.Store.domain.endpointdto.PurchaseDto;
+import com.VicioGames.Store.domain.endpointdto.postput.PurchaseDto;
 import com.VicioGames.Store.domain.repository.PurchaseDomainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,7 @@
 package com.VicioGames.Store.domain.repository;
 
-import com.VicioGames.Store.domain.endpointdto.PurchaseDto;
+import com.VicioGames.Store.domain.endpointdto.postput.PurchaseDto;
+
 import java.util.List;
 import java.util.Optional;
 
