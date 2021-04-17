@@ -45,7 +45,6 @@ public class PurchaseEntity {
 
     //----------------GETTER AND SETTER--------------------------
 
-
     public Integer getpPurchaseId() {
         return pPurchaseId;
     }

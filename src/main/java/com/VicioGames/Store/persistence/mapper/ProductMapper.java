@@ -3,16 +3,15 @@ package com.VicioGames.Store.persistence.mapper;
 
 import com.VicioGames.Store.domain.endpointdto.ProductDto;
 import com.VicioGames.Store.persistence.entity.ProductEntity;
-import org.mapstruct.InheritInverseConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
+import org.mapstruct.*;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring", uses = {SubcategoryMapper.class, CommentMapper.class, ImageMapper.class})
 public interface ProductMapper {
 
+    //Mappers para creación de productos
+    @InheritConfiguration
     @Mappings({
             @Mapping(source = "pProductId", target = "prId"),
             @Mapping(source = "pSubcategoryId", target = "sId"),
@@ -37,4 +36,6 @@ public interface ProductMapper {
     @InheritInverseConfiguration
     @Mapping(target = "pPurchases", ignore = true)
     ProductEntity toProductEntity(ProductDto productDto);
+
+
 }

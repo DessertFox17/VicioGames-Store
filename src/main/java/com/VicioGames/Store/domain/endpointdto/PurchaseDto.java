@@ -11,6 +11,7 @@ public class PurchaseDto {
     private String payMeth;
     private String comment;
     private List<ProductPurchaseDto> products;
+    private StatusDto status;
 
     //----------------GETTER AND SETTER--------------------------
 
@@ -69,5 +70,13 @@ public class PurchaseDto {
 
     public void setProducts(List<ProductPurchaseDto> products) {
         this.products = products;
+    }
+
+    public StatusDto getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusDto status) {
+        this.status = status;
     }
 }

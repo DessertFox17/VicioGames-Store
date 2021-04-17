@@ -13,8 +13,8 @@ import java.util.List;
 public interface StatusMapper {
 
     @Mappings({
-            @Mapping(source = "",target = ""),
-            @Mapping(source = "",target = ""),
+            @Mapping(source = "pStatusId", target = "stId"),
+            @Mapping(source = "stName", target = "name"),
 
     })
     StatusDto toStatusDto(StatusEntity statusEntity);
@@ -22,6 +22,6 @@ public interface StatusMapper {
     List<StatusDto> toStatusDtos(List<StatusEntity> statusList);
 
     @InheritInverseConfiguration
-
+    @Mapping(target = "pPurchases", ignore = false)
     StatusEntity toStatusEntity(StatusDto statusDto);
 }

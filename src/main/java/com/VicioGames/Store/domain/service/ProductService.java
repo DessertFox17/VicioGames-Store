@@ -1,5 +1,6 @@
 package com.VicioGames.Store.domain.service;
 
+import com.VicioGames.Store.domain.endpointdto.GetProductDto;
 import com.VicioGames.Store.domain.endpointdto.ProductDto;
 import com.VicioGames.Store.domain.repository.ProductDomainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class ProductService {
     @Autowired
     private ProductDomainRepository productDomainRepository;
 
-    public Optional<ProductDto> getByProductId(int prId) {
+    public Optional<GetProductDto> getByProductId(int prId) {
         return productDomainRepository.getByProductId(prId);
     }
 
