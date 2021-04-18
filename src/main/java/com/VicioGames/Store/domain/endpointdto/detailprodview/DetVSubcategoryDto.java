@@ -1,10 +1,10 @@
-package com.VicioGames.Store.domain.endpointdto.get;
+package com.VicioGames.Store.domain.endpointdto.detailprodview;
 
-public class GetSubcategoryDto {
+public class DetVSubcategoryDto {
 
     private String name;
     private String description;
-    private GetCategoryDto category;
+    private DetVCategoryDto category;
 
     //----------------GETTERS Y SETTERS ----------------------
 
@@ -25,11 +25,11 @@ public class GetSubcategoryDto {
         this.description = description;
     }
 
-    public GetCategoryDto getCategory() {
+    public DetVCategoryDto getCategory() {
         return category;
     }
 
-    public void setCategory(GetCategoryDto category) {
+    public void setCategory(DetVCategoryDto category) {
         this.category = category;
     }
 }

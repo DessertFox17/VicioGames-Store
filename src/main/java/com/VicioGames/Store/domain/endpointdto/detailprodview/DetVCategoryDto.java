@@ -1,6 +1,6 @@
-package com.VicioGames.Store.domain.endpointdto.get;
+package com.VicioGames.Store.domain.endpointdto.detailprodview;
 
-public class GetCategoryDto {
+public class DetVCategoryDto {
 
     private String name;
     private String description;

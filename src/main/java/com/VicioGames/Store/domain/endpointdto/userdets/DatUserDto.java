@@ -1,25 +1,20 @@
-package com.VicioGames.Store.domain.endpointdto.postput;
+package com.VicioGames.Store.domain.endpointdto.userdets;
 
 import java.time.LocalDateTime;
 
-public class UserDto {
-
+public class DatUserDto {
     private int uId;
-    private int rId;
     private String firstName;
     private String lastName;
     private int idNumber;
     private String idType;
     private LocalDateTime bitrhDate;
-    private LocalDateTime createdDate;
     private String address;
     private long phoneNumber;
     private String email;
-    private String password;
-    private boolean status;
-    private RoleDto role;
 
     //----------------GETTERS Y SETTERS ----------------------
+
 
     public int getuId() {
         return uId;
@@ -27,14 +22,6 @@ public class UserDto {
 
     public void setuId(int uId) {
         this.uId = uId;
-    }
-
-    public int getrId() {
-        return rId;
-    }
-
-    public void setrId(int rId) {
-        this.rId = rId;
     }
 
     public String getFirstName() {
@@ -77,14 +64,6 @@ public class UserDto {
         this.bitrhDate = bitrhDate;
     }
 
-    public LocalDateTime getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(LocalDateTime createdDate) {
-        this.createdDate = createdDate;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -108,29 +87,4 @@ public class UserDto {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public RoleDto getRole() {
-        return role;
-    }
-
-    public void setRole(RoleDto role) {
-        this.role = role;
-    }
-
 }

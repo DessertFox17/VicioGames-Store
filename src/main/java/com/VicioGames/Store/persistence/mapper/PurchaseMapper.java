@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.mapper;
 
-import com.VicioGames.Store.domain.endpointdto.postput.PurchaseDto;
+import com.VicioGames.Store.domain.endpointdto.PurchaseDto;
 import com.VicioGames.Store.persistence.entity.PurchaseEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

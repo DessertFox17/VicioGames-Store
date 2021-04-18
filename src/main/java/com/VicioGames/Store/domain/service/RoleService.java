@@ -1,6 +1,6 @@
 package com.VicioGames.Store.domain.service;
 
-import com.VicioGames.Store.domain.endpointdto.postput.RoleDto;
+import com.VicioGames.Store.domain.endpointdto.RoleDto;
 import com.VicioGames.Store.domain.repository.RoleDomainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

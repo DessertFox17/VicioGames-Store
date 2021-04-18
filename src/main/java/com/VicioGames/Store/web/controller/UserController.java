@@ -1,44 +1,33 @@
 package com.VicioGames.Store.web.controller;
 
-import com.VicioGames.Store.domain.endpointdto.postput.UserDto;
+import com.VicioGames.Store.domain.endpointdto.UserDto;
+import com.VicioGames.Store.domain.endpointdto.userdets.DatUserDto;
 import com.VicioGames.Store.domain.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("/all")
-    public List<UserDto> getAll(){
 
-        return userService.getAll();
-    }
-
-    @GetMapping("/f/{userId}")
-    public Optional<UserDto> getByUserId(@PathVariable("userId")int uId){
+    @GetMapping("/{userId}")
+    public Optional<DatUserDto> getByUserId(@PathVariable("userId")int uId){
         return userService.getByUserId(uId);
     }
 
-    @GetMapping("/fbr")
-    public Optional<List<UserDto>> getByRoleId(@RequestParam("roleId")int rId) {
-        return userService.getByRoleId(rId);
-    }
-
-    @PostMapping("/s")
-    public UserDto createUser(@RequestBody UserDto userDto, @RequestParam(required = false) String name){
-        System.out.println(name);
+    @PostMapping("/new")
+    public UserDto createUser(@RequestBody UserDto userDto){
         return userService.createUser(userDto);
     }
 
-    @DeleteMapping("/d/{id}")
-    public void deleteUser(@PathVariable("id")int uId) {
+    @DeleteMapping("/{userId}")
+    public void deleteUser(@PathVariable("userId")int uId) {
         userService.deleteUser(uId);
     }
 

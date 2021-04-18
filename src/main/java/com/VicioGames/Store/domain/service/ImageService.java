@@ -1,6 +1,6 @@
 package com.VicioGames.Store.domain.service;
 
-import com.VicioGames.Store.domain.endpointdto.postput.ImageDto;
+import com.VicioGames.Store.domain.endpointdto.ImageDto;
 import com.VicioGames.Store.domain.repository.ImageDomainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

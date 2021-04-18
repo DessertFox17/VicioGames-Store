@@ -1,6 +1,6 @@
 package com.VicioGames.Store.web.controller;
 
-import com.VicioGames.Store.domain.endpointdto.postput.ImageDto;
+import com.VicioGames.Store.domain.endpointdto.ImageDto;
 import com.VicioGames.Store.domain.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

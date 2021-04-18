@@ -1,4 +1,4 @@
-package com.VicioGames.Store.domain.endpointdto.postput;
+package com.VicioGames.Store.domain.endpointdto;
 
 import java.time.LocalDateTime;
 import java.util.List;

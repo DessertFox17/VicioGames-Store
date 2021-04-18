@@ -1,7 +1,7 @@
 package com.VicioGames.Store.persistence.mapper;
 
-import com.VicioGames.Store.domain.endpointdto.get.GetSubcategoryDto;
-import com.VicioGames.Store.domain.endpointdto.postput.SubcategoryDto;
+import com.VicioGames.Store.domain.endpointdto.detailprodview.DetVSubcategoryDto;
+import com.VicioGames.Store.domain.endpointdto.SubcategoryDto;
 import com.VicioGames.Store.persistence.entity.SubcategoryEntity;
 import org.mapstruct.*;
 
@@ -40,8 +40,8 @@ public interface SubcategoryMapper {
             @Mapping(source = "sDescript", target = "description"),
             @Mapping(source = "pCategory", target = "category"),
     })
-    GetSubcategoryDto toGetSubcategoryDto(SubcategoryEntity subcategoryEntity);
-    List<GetSubcategoryDto> toGetSubcategoriesDto(List<SubcategoryEntity> getSubcategoriesList);
+    DetVSubcategoryDto toGetSubcategoryDto(SubcategoryEntity subcategoryEntity);
+    List<DetVSubcategoryDto> toGetSubcategoriesDto(List<SubcategoryEntity> getSubcategoriesList);
 
     @InheritInverseConfiguration
     @Mappings({
@@ -50,6 +50,6 @@ public interface SubcategoryMapper {
             @Mapping(target = "sStatus", ignore = true),
             @Mapping(target = "pProducts", ignore = true),
     })
-    SubcategoryEntity toGetSubcategoryEntity(GetSubcategoryDto getSubcategoryDto);
+    SubcategoryEntity toGetSubcategoryEntity(DetVSubcategoryDto detVSubcategoryDto);
 
 }

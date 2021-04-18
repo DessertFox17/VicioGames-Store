@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.repository;
 
-import com.VicioGames.Store.domain.endpointdto.postput.RoleDto;
+import com.VicioGames.Store.domain.endpointdto.RoleDto;
 import com.VicioGames.Store.domain.repository.RoleDomainRepository;
 import com.VicioGames.Store.persistence.crud.RoleEntityCrudRepository;
 import com.VicioGames.Store.persistence.entity.RoleEntity;

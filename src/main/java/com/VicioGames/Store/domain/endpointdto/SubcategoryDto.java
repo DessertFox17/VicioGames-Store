@@ -1,20 +1,30 @@
-package com.VicioGames.Store.domain.endpointdto.postput;
+package com.VicioGames.Store.domain.endpointdto;
 
-public class CategoryDto {
+public class SubcategoryDto {
 
-    private int caId;
+    private int sId;
+    private int cId;
     private String name;
     private String description;
     private boolean status;
 
-    //----------------GETTER AND SETTER--------------------------
+    //----------------GETTERS Y SETTERS ----------------------
 
-    public int getCaId() {
-        return caId;
+
+    public int getsId() {
+        return sId;
     }
 
-    public void setCaId(int caId) {
-        this.caId = caId;
+    public void setsId(int sId) {
+        this.sId = sId;
+    }
+
+    public int getcId() {
+        return cId;
+    }
+
+    public void setcId(int cId) {
+        this.cId = cId;
     }
 
     public String getName() {

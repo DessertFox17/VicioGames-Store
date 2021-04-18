@@ -1,7 +1,7 @@
 package com.VicioGames.Store.persistence.mapper;
 
-import com.VicioGames.Store.domain.endpointdto.get.GetCategoryDto;
-import com.VicioGames.Store.domain.endpointdto.postput.CategoryDto;
+import com.VicioGames.Store.domain.endpointdto.CategoryDto;
+import com.VicioGames.Store.domain.endpointdto.detailprodview.DetVCategoryDto;
 import com.VicioGames.Store.persistence.entity.CategoryEntity;
 import org.mapstruct.*;
 
@@ -30,7 +30,7 @@ public interface CategoryMapper {
             @Mapping(source = "catName", target = "name"),
             @Mapping(source = "catDescript", target = "description"),
     })
-    GetCategoryDto toGetCategoryDto(CategoryEntity categoryEntity);
+    DetVCategoryDto toDetVCategoryDto(CategoryEntity categoryEntity);
 
     @InheritInverseConfiguration
     @Mappings({
@@ -38,5 +38,5 @@ public interface CategoryMapper {
             @Mapping(target = "catStatus", ignore = true),
             @Mapping(target = "pSubcategories", ignore = true),
     })
-    CategoryEntity toCategoryEntity(GetCategoryDto getCategoryDto);
+    CategoryEntity toCategoryEntity(DetVCategoryDto getCategoryDto);
 }

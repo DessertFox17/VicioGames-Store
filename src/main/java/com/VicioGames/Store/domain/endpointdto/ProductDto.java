@@ -1,25 +1,45 @@
-package com.VicioGames.Store.domain.endpointdto.get;
-
-import com.VicioGames.Store.domain.endpointdto.postput.CommentDto;
-import com.VicioGames.Store.domain.endpointdto.postput.ImageDto;
+package com.VicioGames.Store.domain.endpointdto;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-public class GetProductDto {
+public class ProductDto {
+
+    private int prId;
+    private int sId;
     private String name;
     private double price;
     private int stock;
     private double shipCost;
     private String tumbnail;
-    private LocalDateTime publicationDate;
+    private LocalDateTime publicDate;
     private String description;
     private String details;
-    private GetSubcategoryDto subcategory;
-    private List<ImageDto> images;
-    private List<CommentDto> comments;
+    private int searchCounter;
+    private boolean status;
+
+    public ProductDto(){
+
+
+    }
 
     //----------------GETTER AND SETTER--------------------------
+
+
+    public int getPrId() {
+        return prId;
+    }
+
+    public void setPrId(int prId) {
+        this.prId = prId;
+    }
+
+    public int getsId() {
+        return sId;
+    }
+
+    public void setsId(int sId) {
+        this.sId = sId;
+    }
 
     public String getName() {
         return name;
@@ -61,12 +81,12 @@ public class GetProductDto {
         this.tumbnail = tumbnail;
     }
 
-    public LocalDateTime getPublicationDate() {
-        return publicationDate;
+    public LocalDateTime getPublicDate() {
+        return publicDate;
     }
 
-    public void setPublicationDate(LocalDateTime publicationDate) {
-        this.publicationDate = publicationDate;
+    public void setPublicDate(LocalDateTime publicDate) {
+        this.publicDate = publicDate;
     }
 
     public String getDescription() {
@@ -85,27 +105,19 @@ public class GetProductDto {
         this.details = details;
     }
 
-    public GetSubcategoryDto getSubcategory() {
-        return subcategory;
+    public int getSearchCounter() {
+        return searchCounter;
     }
 
-    public void setSubcategory(GetSubcategoryDto subcategory) {
-        this.subcategory = subcategory;
+    public void setSearchCounter(int searchCounter) {
+        this.searchCounter = searchCounter;
     }
 
-    public List<ImageDto> getImages() {
-        return images;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setImages(List<ImageDto> images) {
-        this.images = images;
-    }
-
-    public List<CommentDto> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<CommentDto> comments) {
-        this.comments = comments;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

@@ -1,6 +1,6 @@
 package com.VicioGames.Store.persistence.repository;
 
-import com.VicioGames.Store.domain.endpointdto.postput.StatusDto;
+import com.VicioGames.Store.domain.endpointdto.StatusDto;
 import com.VicioGames.Store.domain.repository.StatusDomainRepository;
 import com.VicioGames.Store.persistence.crud.StatusEntityCrudRepository;
 import com.VicioGames.Store.persistence.entity.StatusEntity;

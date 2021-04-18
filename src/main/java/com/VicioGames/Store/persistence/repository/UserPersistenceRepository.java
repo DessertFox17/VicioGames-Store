@@ -1,6 +1,7 @@
 package com.VicioGames.Store.persistence.repository;
 
-import com.VicioGames.Store.domain.endpointdto.postput.UserDto;
+import com.VicioGames.Store.domain.endpointdto.UserDto;
+import com.VicioGames.Store.domain.endpointdto.userdets.DatUserDto;
 import com.VicioGames.Store.domain.repository.UserDomainRepository;
 import com.VicioGames.Store.persistence.crud.UserEntityCrudRepository;
 import com.VicioGames.Store.persistence.entity.UserEntity;
@@ -8,8 +9,6 @@ import com.VicioGames.Store.persistence.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
-import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -23,21 +22,8 @@ public class UserPersistenceRepository implements UserDomainRepository {
 
 
     @Override
-    public List<UserDto> getAll() {
-
-        return mapper.toUsersDto((List<UserEntity>) userEntityCrudRepository.findAll());
-
-    }
-
-    @Override
-    public Optional<UserDto> getByUserId(int uId) {
-        return userEntityCrudRepository.findById(uId).map(userEntity -> mapper.toUserDto(userEntity));
-    }
-
-    @Override
-    public Optional<List<UserDto>> getByRoleId(int rId) {
-        List<UserEntity> userEntities  = userEntityCrudRepository.findBypRoleId((rId));
-        return Optional.of(mapper.toUsersDto(userEntities));
+    public Optional<DatUserDto> getByUserId(int uId) {
+        return userEntityCrudRepository.findById(uId).map(userEntity -> mapper.toDatUserDto(userEntity));
     }
 
     @Override

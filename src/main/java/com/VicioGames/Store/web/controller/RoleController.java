@@ -1,6 +1,6 @@
 package com.VicioGames.Store.web.controller;
 
-import com.VicioGames.Store.domain.endpointdto.postput.RoleDto;
+import com.VicioGames.Store.domain.endpointdto.RoleDto;
 import com.VicioGames.Store.domain.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

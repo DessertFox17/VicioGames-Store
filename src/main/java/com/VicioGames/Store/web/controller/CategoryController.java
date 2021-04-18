@@ -1,6 +1,6 @@
 package com.VicioGames.Store.web.controller;
 
-import com.VicioGames.Store.domain.endpointdto.postput.CategoryDto;
+import com.VicioGames.Store.domain.endpointdto.CategoryDto;
 import com.VicioGames.Store.domain.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

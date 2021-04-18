@@ -1,5 +1,5 @@
 package com.VicioGames.Store.web.controller;
-import com.VicioGames.Store.domain.endpointdto.postput.StatusDto;
+import com.VicioGames.Store.domain.endpointdto.StatusDto;
 import com.VicioGames.Store.domain.service.StatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

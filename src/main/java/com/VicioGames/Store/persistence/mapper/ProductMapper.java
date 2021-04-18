@@ -1,8 +1,9 @@
 package com.VicioGames.Store.persistence.mapper;
 
 
-import com.VicioGames.Store.domain.endpointdto.get.GetProductDto;
-import com.VicioGames.Store.domain.endpointdto.postput.ProductDto;
+import com.VicioGames.Store.domain.endpointdto.ProductDto;
+import com.VicioGames.Store.domain.endpointdto.detailprodview.DetVProductDto;
+import com.VicioGames.Store.domain.endpointdto.smartfilter.SmartProuctDto;
 import com.VicioGames.Store.persistence.entity.ProductEntity;
 import org.mapstruct.*;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = {SubcategoryMapper.class, CommentMapper.class, ImageMapper.class})
 public interface ProductMapper {
 
-    //Mappers para creación de productos
+    //MAPPERS TO CREATE NEW PRODUCTS
     @InheritConfiguration
     @Mappings({
             @Mapping(source = "pProductId", target = "prId"),
@@ -32,19 +33,13 @@ public interface ProductMapper {
     List<ProductDto> toProductsDto(List<ProductEntity> productsList);
 
     @InheritInverseConfiguration
-    @Mappings({
-            @Mapping(target = "pSubcategory", ignore = true),
-            @Mapping(target = "pImages", ignore = true),
-            @Mapping(target = "pComments", ignore = true),
-            @Mapping(target = "pPurchases", ignore = true),
-    })
-
     ProductEntity toProductEntity(ProductDto productDto);
 
-    //Mappers para Consulta de productos
+    //MAPPERS TO GET THE PRODUCT DETAILS VIEW
 
     @InheritConfiguration
     @Mappings({
+            @Mapping(source = "pProductId", target = "prId"),
             @Mapping(source = "prName", target = "name"),
             @Mapping(source = "prPrice", target = "price"),
             @Mapping(source = "prStock", target = "stock"),
@@ -57,19 +52,21 @@ public interface ProductMapper {
             @Mapping(source = "pImages", target = "images"),
             @Mapping(source = "pComments", target = "comments"),
     })
-    GetProductDto toGetProductDto(ProductEntity productEntity);
+    DetVProductDto toGetProductDto(ProductEntity productEntity);
 
-    List<GetProductDto> toGetProductsDto(List<ProductEntity> getProductsList);
+    List<DetVProductDto> toGetProductsDto(List<ProductEntity> getProductsList);
 
     @InheritInverseConfiguration
-    @Mappings({
-            @Mapping(target = "pProductId", ignore = true),
-            @Mapping(target = "pSubcategoryId", ignore = true),
-            @Mapping(target = "prSearchCount", ignore = true),
-            @Mapping(target = "prStatus", ignore = true),
-            @Mapping(target = "pPurchases", ignore = true)
-    })
-    ProductEntity toGetProductEntity(GetProductDto getProductDto);
+    ProductEntity toGetProductEntity(DetVProductDto detVProductDto);
 
+    //MAPPERS FOR THE SMART PRODUCT FILTER
+
+    @InheritConfiguration
+    @Mapping(source = "prName", target = "name")
+    SmartProuctDto toSmartProductDto(ProductEntity productEntity);
+    List<SmartProuctDto> toSmartProductsDto(List<ProductEntity> smartProductsList);
+
+    @InheritInverseConfiguration
+    ProductEntity toSmartProductEntity(SmartProuctDto smartProuctDto);
 
 }

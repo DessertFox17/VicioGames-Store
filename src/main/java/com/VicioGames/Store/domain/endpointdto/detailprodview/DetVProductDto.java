@@ -1,24 +1,23 @@
-package com.VicioGames.Store.domain.endpointdto.postput;
+package com.VicioGames.Store.domain.endpointdto.detailprodview;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-public class ProductDto {
-
+public class DetVProductDto {
     private int prId;
-    private int sId;
     private String name;
     private double price;
     private int stock;
     private double shipCost;
     private String tumbnail;
-    private LocalDateTime publicDate;
+    private LocalDateTime publicationDate;
     private String description;
     private String details;
-    private int searchCounter;
-    private boolean status;
+    private DetVSubcategoryDto subcategory;
+    private List<DetVtImageDto> images;
+    private List<DetVCommentDto> comments;
 
     //----------------GETTER AND SETTER--------------------------
-
 
     public int getPrId() {
         return prId;
@@ -26,14 +25,6 @@ public class ProductDto {
 
     public void setPrId(int prId) {
         this.prId = prId;
-    }
-
-    public int getsId() {
-        return sId;
-    }
-
-    public void setsId(int sId) {
-        this.sId = sId;
     }
 
     public String getName() {
@@ -76,12 +67,12 @@ public class ProductDto {
         this.tumbnail = tumbnail;
     }
 
-    public LocalDateTime getPublicDate() {
-        return publicDate;
+    public LocalDateTime getPublicationDate() {
+        return publicationDate;
     }
 
-    public void setPublicDate(LocalDateTime publicDate) {
-        this.publicDate = publicDate;
+    public void setPublicationDate(LocalDateTime publicationDate) {
+        this.publicationDate = publicationDate;
     }
 
     public String getDescription() {
@@ -100,19 +91,27 @@ public class ProductDto {
         this.details = details;
     }
 
-    public int getSearchCounter() {
-        return searchCounter;
+    public DetVSubcategoryDto getSubcategory() {
+        return subcategory;
     }
 
-    public void setSearchCounter(int searchCounter) {
-        this.searchCounter = searchCounter;
+    public void setSubcategory(DetVSubcategoryDto subcategory) {
+        this.subcategory = subcategory;
     }
 
-    public boolean isStatus() {
-        return status;
+    public List<DetVtImageDto> getImages() {
+        return images;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setImages(List<DetVtImageDto> images) {
+        this.images = images;
+    }
+
+    public List<DetVCommentDto> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<DetVCommentDto> comments) {
+        this.comments = comments;
     }
 }
